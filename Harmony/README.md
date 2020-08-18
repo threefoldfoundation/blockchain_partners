@@ -37,7 +37,7 @@ Get into the container with,
 
 ```docker exec -it harmony bash```
 
-Verify the node runnning by checking the harmony process,
+Verify the node runnning by checking the harmony process, you could see it running as below
 
 ```
 root@hmny:/opt# netstat -lntpe
@@ -51,6 +51,17 @@ tcp        0      0 0.0.0.0:6000            0.0.0.0:*               LISTEN      
 tcp6       0      0 :::22                   :::*                    LISTEN      0          12490420   1/sshd
 tcp6       0      0 :::5000                 :::*                    LISTEN      0          12490549   59/./harmony
 
+```
+
+The default data directory for harmony is /opt where you will see all harmony data,
+
+```
+ tree -d
+.
+|-- explorer_storage_0.0.0.0_9000
+|-- harmony_db_0
+|-- harmony_db_1
+`-- latest
 ```
 
 
