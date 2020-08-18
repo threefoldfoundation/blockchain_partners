@@ -31,3 +31,27 @@ Successfully tagged hmy:latest
 You can then spin the container with your created image. Map host ports as needed,
 
 ```docker run -dit --name=harmony --hostname=harmony -p 9000:9000 -p 6000:6000 hmy:latest bash```
+
+### How to verify ?
+Get into the container with,
+
+```docker exec -it harmony bash```
+
+Verify the node runnning by checking the harmony process,
+
+```
+root@hmny:/opt# netstat -lntpe
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       User       Inode      PID/Program name
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      0          12490418   1/sshd
+tcp        0      0 127.0.0.1:9500          0.0.0.0:*               LISTEN      0          12491157   59/./harmony
+tcp        0      0 127.0.0.1:9800          0.0.0.0:*               LISTEN      0          12491158   59/./harmony
+tcp        0      0 0.0.0.0:9000            0.0.0.0:*               LISTEN      0          12491137   59/./harmony
+tcp        0      0 0.0.0.0:6000            0.0.0.0:*               LISTEN      0          12491141   59/./harmony
+tcp6       0      0 :::22                   :::*                    LISTEN      0          12490420   1/sshd
+tcp6       0      0 :::5000                 :::*                    LISTEN      0          12490549   59/./harmony
+
+```
+
+
+
