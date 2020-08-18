@@ -64,5 +64,11 @@ The default data directory for harmony is /opt where you will see all harmony da
 `-- latest
 ```
 
+## Preparing our flist
+
+The should be easy ! Export your docker container as ".tar.gz" and upload it to Threefold's hub @ [https://hub.grid.tf](https://hub.grid.tf)
+
+```docker export your_container_name > docker export your_container_name.tar.gz```
+
 
 
