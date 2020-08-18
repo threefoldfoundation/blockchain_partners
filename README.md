@@ -31,5 +31,5 @@ Every blockchain partner has a folder in this repository and all information wit
 
 ### Maintainers of this repository
 
-- Abdul Rehman - Telegram @arrajput
-- Benjelloun Oussama -  Telegram @BenjeOuss
+- [Abdul Rehman](https://github.com/abdulgig) 
+- [Benjelloun Oussama](https://github.com/BenjellounO)
