@@ -70,5 +70,5 @@ The should be easy ! Export your docker container as ".tar.gz" and upload it to 
 
 ```docker export your_container_name > docker export your_container_name.tar.gz```
 
-
+![hub_upload](images/upload_hub.jpg)
 
