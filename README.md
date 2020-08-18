@@ -19,6 +19,7 @@ Every blockchain partner has a folder in this repository and all information wit
 ├── partner_name
 │   ├── Dockerfile
 │   ├── README.md
+│   ├── config
 │   ├── examples
 │   └── scripts
 
@@ -28,6 +29,7 @@ Every blockchain partner has a folder in this repository and all information wit
 * The Dockerfile contains code on how to build the docker image
 * The examples directory can contain any HowTos or any tutorials or any other helpful information for the community or end users
 * The scripts directory can contain all the scripts to automate, deploy, build, monitor for the partner node
+* The config directory may contain user specific configuration / settings / files / keys required to build into the image
 
 ### Maintainers of this repository
 
