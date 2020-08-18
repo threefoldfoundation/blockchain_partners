@@ -13,7 +13,6 @@ sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' 
 echo "export VISIBLE=now" >> /etc/profile
 echo "127.0.0.1 localhost" > /etc/hosts
 
-rm -rf ~/.hmy/blskeys/*
 /opt/hmy keys generate-bls-keys --count 1 --shard 0
 mkdir -pv ~/.hmy/blskeys && mv *.key ~/.hmy/blskeys
 
