@@ -2,7 +2,6 @@
 FROM ubuntu:18.04
 
 LABEL maintainer="ThreeFold Engineers support@grid.tf"
-
 WORKDIR /opt
 
 RUN apt-get -y update && apt install curl -y
@@ -25,9 +24,6 @@ RUN set -ex; \
         ;
 
 COPY start_hmy.sh /
-
 ENTRYPOINT ["/start_hmy.sh"]
-
 VOLUME /opt
-
 EXPOSE 9000 6000
