@@ -25,6 +25,11 @@ The BLS key and the password file could be found here,
 
 By default, this flist uses the ```/opt``` directory and all data for harmony is within it. 
 
+### Harmony Logs
+
+The logs could be viewed under the directory ```cd /opt/latest```
+
+
 
 
 
