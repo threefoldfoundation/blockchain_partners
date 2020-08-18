@@ -29,4 +29,6 @@ Every blockchain partner has a folder in this repository and all information wit
 * The examples directory can contain any HowTos or any tutorials or any other helpful information for the community or end users
 * The scripts directory can contain all the scripts to automate, deploy, build, monitor for the partner node
 
-
+### Maintainers of this repository
+Abdul Rehman - Telegram @arrajput
+Benjelloun Oussama -  Telegram @BenjeOuss
