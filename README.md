@@ -30,5 +30,6 @@ Every blockchain partner has a folder in this repository and all information wit
 * The scripts directory can contain all the scripts to automate, deploy, build, monitor for the partner node
 
 ### Maintainers of this repository
-Abdul Rehman - Telegram @arrajput
-Benjelloun Oussama -  Telegram @BenjeOuss
+
+- Abdul Rehman - Telegram @arrajput
+- Benjelloun Oussama -  Telegram @BenjeOuss
