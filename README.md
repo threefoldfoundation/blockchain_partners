@@ -16,13 +16,14 @@ This is a public repository where we maintain flists and docker images for our b
 Every blockchain partner has a folder in this repository and all information with respect to that partner is only and only in that folder. The folder structure for the partner is herein,
 
 ```
-├── partner_name
+├── partners
 │   ├── Dockerfile
 │   ├── README.md
 │   ├── config
 │   ├── examples
+│   ├── flist.md
+│   ├── images
 │   └── scripts
-
 ```
 
 * README.md - Every partner has his own README.md that should contain all the necessary information to deploy their node
@@ -30,6 +31,8 @@ Every blockchain partner has a folder in this repository and all information wit
 * The examples directory can contain any HowTos or any tutorials or any other helpful information for the community or end users
 * The scripts directory can contain all the scripts to automate, deploy, build, monitor for the partner node
 * The config directory may contain user specific configuration / settings / files / keys required to build into the image
+* flist.md will contain link to partner's flist and any information related to it
+* images directory to contain all images / screenshots used in Readme's / HowTo's
 
 ### Maintainers of this repository
 
