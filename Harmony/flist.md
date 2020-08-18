@@ -2,7 +2,7 @@
 
 Link to flist is herein
 
-[https://hub.grid.tf/arehman/v2-harmony-0-5.flist](https://hub.grid.tf/arehman/v2-harmony-0-5.flist)
+[https://hub.grid.tf/arehman/v2-harmony-0-6.flist](https://hub.grid.tf/arehman/v2-harmony-0-6.flist)
 
 ### Configuration 
 
