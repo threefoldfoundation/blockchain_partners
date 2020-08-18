@@ -21,6 +21,10 @@ The BLS key and the password file could be found here,
 
 ``` ~/.hmy/blskeys/ or here /root/.hmy/blskeys/```
 
+### Data Persistence - Where to mount host volume ?
+
+By default, this flist uses the ```/opt``` directory and all data for harmony is within it. 
+
 
 
 
