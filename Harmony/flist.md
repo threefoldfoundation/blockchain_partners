@@ -33,7 +33,7 @@ The logs could be viewed under the directory ```cd /opt/latest```
 
 Here is how you can do it and you can see the output below,
 
-##### /opt/latest#  curl https://monitor.hmny.io/status?network=mainnet | json_pp
+##### curl https://monitor.hmny.io/status?network=mainnet | json_pp
 
 ```
 root@cluster01:/opt/latest#  curl https://monitor.hmny.io/status?network=mainnet | json_pp
@@ -80,10 +80,5 @@ root@cluster01:/opt/latest#  curl https://monitor.hmny.io/status?network=mainnet
       "v6268-v2.3.4-0-g7a6fd23f"
    ],
    "used-seats" : 640,
-   "validators" : 75```
-
-
-
-
-
-
+   "validators" : 75
+   ```
