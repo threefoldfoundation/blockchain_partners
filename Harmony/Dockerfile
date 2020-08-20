@@ -1,7 +1,7 @@
 # Setup the base image
 FROM ubuntu:18.04
 
-LABEL maintainer="ThreeFold Engineers support@grid.tf"
+LABEL maintainer="abdul@incubaid.com"
 WORKDIR /opt
 
 RUN apt-get -y update && apt install curl -y
