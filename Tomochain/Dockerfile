@@ -21,7 +21,22 @@ RUN set -ex; \
         musl-dev \
         ;
 
-COPY scripts/start_hmy.sh /
+
+#User Variables
+ENV IDENTITY ''
+ENV PASSWORD ''
+ENV PRIVATE_KEY ''
+ENV BOOTNODES ''
+ENV VERBOSITY 3
+ENV NETWORK_ID '88'
+ENV WS_SECRET ''
+ENV NETSTATS_HOST ''
+ENV NETSTATS_PORT ''
+
+COPY scripts/start_tomo.sh /
 COPY config/tomo /usr/bin
 
 ENTRYPOINT ["/start_tomo.sh"]
+
+EXPOSE 8545 8546 30303 30303/udp
+VOLUME /tomochain
