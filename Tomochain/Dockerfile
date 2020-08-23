@@ -1,8 +1,7 @@
 # Setup the base image
 FROM ubuntu:18.04
-
 LABEL maintainer="abdul@incubaid.com"
-WORKDIR /tomochain
+WORKDIR /opt
 
 # Install dependencies
 RUN set -ex; \
@@ -21,7 +20,6 @@ RUN set -ex; \
         musl-dev \
         ;
 
-
 #User Variables
 ENV IDENTITY ''
 ENV PASSWORD ''
@@ -34,9 +32,8 @@ ENV NETSTATS_HOST ''
 ENV NETSTATS_PORT ''
 
 COPY scripts/start_tomo.sh /
-COPY config/tomo /usr/bin
+COPY config/tomo /opt
 
 ENTRYPOINT ["/start_tomo.sh"]
-
 EXPOSE 8545 8546 30303 30303/udp
-VOLUME /tomochain
+VOLUME /opt
