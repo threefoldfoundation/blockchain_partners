@@ -38,3 +38,27 @@ You can then spin the container with your created image. Map host ports as neede
 
 ```docker run -dit --name=tomo --hostname=tomo -p 8545:8545 -p 8546:8546 -p 30303:30303 -p 30303:30303/udp tomo:latest bash```
 
+
+### How to verify ?
+Get into the container with,
+
+```docker exec -it tomo bash```
+
+Verify the node runnning by checking the tomo process, you could see it running as below by using the commands,
+
+```
+#netstat -lntupe
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       User       Inode      PID/Program name
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      0          15713202   1/sshd
+tcp6       0      0 :::30303                :::*                    LISTEN      0          15714306   26/tomo
+tcp6       0      0 :::22                   :::*                    LISTEN      0          15713207   1/sshd
+udp6       0      0 :::30303                :::*                                0          15714295   26/tomo
+
+# ps -ef
+UID        PID  PPID  C STIME TTY          TIME CMD
+root         1     0  0 09:28 pts/0    00:00:00 /usr/sbin/sshd -D
+root        26     1  7 09:28 pts/0    00:00:05 /opt/tomo --syncmode full --announce-txs --datadir /opt/data --networkid 88 --port 30303 --keystore /opt/keys --password /opt/keys/pass.txt -
+root        38     0  0 09:28 pts/1    00:00:00 bash
+
+```
