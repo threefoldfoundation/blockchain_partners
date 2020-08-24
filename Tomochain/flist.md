@@ -1,6 +1,6 @@
 # Tomo flists
 
-This flist will start a TomoChain Full Node. To create a TomoChain Master node, [see here](https://docs.tomochain.com/masternode-and-dex/masternode/run-a-full-node/create-a-tomochain-masternode)
+This flist will start a TomoChain Full Node. To create a TomoChain Master node, [See here](https://docs.tomochain.com/masternode-and-dex/masternode/run-a-full-node/create-a-tomochain-masternode)
 
 Link to flist is herein
 
