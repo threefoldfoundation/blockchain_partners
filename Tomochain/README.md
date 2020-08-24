@@ -60,5 +60,28 @@ UID        PID  PPID  C STIME TTY          TIME CMD
 root         1     0  0 09:28 pts/0    00:00:00 /usr/sbin/sshd -D
 root        26     1  7 09:28 pts/0    00:00:05 /opt/tomo --syncmode full --announce-txs --datadir /opt/data --networkid 88 --port 30303 --keystore /opt/keys --password /opt/keys/pass.txt -
 root        38     0  0 09:28 pts/1    00:00:00 bash
+```
+
+The default data directory for harmony is /opt where you will see all tomo data,
 
 ```
+# tree -dh
+.
+|-- [4.0K]  data
+|   |-- [4.0K]  tomo
+|   |   |-- [4.0K]  chaindata
+|   |   `-- [4.0K]  nodes
+|   `-- [4.0K]  tomox
+`-- [4.0K]  keys
+
+```
+
+## Preparing our flist - [Tomo flist is here](flist.md)
+
+This should be easy ! Export your docker container as ".tar.gz" and upload it to Threefold's hub @ [https://hub.grid.tf](https://hub.grid.tf)
+
+```docker export your_container_name > docker export your_container_name.tar.gz```
+
+![hub_upload](images/upload_hub.jpg)
+
+#### - Details of flists for Harmony under this link [Tomo flists](flist.md)
