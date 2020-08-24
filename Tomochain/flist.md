@@ -1,1 +1,20 @@
-#Tomochain flist
+# Tomo flists
+
+## This flist will start a TomoChain Full Node
+
+Link to flist is herein
+
+[https://hub.grid.tf/arehman/v2-tomo-0-7.flist](https://hub.grid.tf/arehman/v2-tomo-0-7.flist)
+
+### Configuration 
+
+#### Environment Variables
+
+```
+* pub_key - This is your SSH public key (ed25519)
+* NETWORK_ID - default (Mainnet [88]) , else you can specify (Testnet [89])
+* KEYPASS - The key password to encrypt / generate your new Tomo account (default : keypass = tf2020)
+* BOOTNODES - Specify a BOOTNODE, else default (enode://97f0ca95a653e3c44d5df2674e19e9324ea4bf4d47a46b1d8560f3ed4ea328f725acec3fcfcb37eb11706cf07da669e9688b091f1543f89b2425700a68bc8876@3.212.20.0:30301)
+
+```
+Every instance starts with a newly generated Tomo account with the key/password provided by you as an environment variable. Alternately, to use your old keys you can copy the keys into the config directory and edit the [Dockerfile](Dockerfile) and modify the script [start_tomo.sh](scripts/start_tomo.sh) to use that key and start your TomoChain node.
