@@ -6,6 +6,12 @@ Link to flist is herein
 
 [https://hub.grid.tf/arehman/v2-tomo-0-7.flist](https://hub.grid.tf/arehman/v2-tomo-0-7.flist)
 
+### General Hardware Advice
+
+* Must have at least 16 cores
+* Must have at least 32GB of RAM
+* Storage must be SSD - 500 GB
+
 ### Configuration 
 
 #### Environment Variables
