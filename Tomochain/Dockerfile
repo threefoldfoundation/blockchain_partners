@@ -16,6 +16,7 @@ RUN set -ex; \
         make \
 	gcc \
 	curl \
+	tree \
         dnsutils \
         musl-dev \
         ;
