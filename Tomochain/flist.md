@@ -19,7 +19,7 @@ Link to flist is herein
 ```
 Every instance starts with a newly generated Tomo account with the key/password provided by you as an environment variable. Alternately, to use your old keys you can copy the keys into the config directory and edit the [Dockerfile](Dockerfile) and modify the script [start_tomo.sh](scripts/start_tomo.sh) to use that key and start your TomoChain node.
 
-### Where is TomoChain  ?
+### Where is TomoChain Keys/Data  ?
 
 The TomoChain account and keys could be found here, layout is below which you can see with tree -dh
 ```/opt/keys```
