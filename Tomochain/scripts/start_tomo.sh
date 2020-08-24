@@ -23,6 +23,8 @@ echo ${KEYPASS} > /opt/keys/pass.txt
 if [ -z "${IDENTITY}" ]; then IDENTITY="tf-tomo"; fi
 if [ -z "${BOOTNODES}" ]; then BOOTNODES=enode://97f0ca95a653e3c44d5df2674e19e9324ea4bf4d47a46b1d8560f3ed4ea328f725acec3fcfcb37eb11706cf07da669e9688b091f1543f89b2425700a68bc8876@3.212.20.0:30301; fi
 
+if [ -z "${NETWORK_ID}" ]; then NETWORK_ID=88; fi
+
 # Set TomoChain Stats Server | Default
 NETSTATS_HOST='wss://stats.tomochain.com'
 NETSTATS_PORT='443'
