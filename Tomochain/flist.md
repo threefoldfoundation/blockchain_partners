@@ -38,4 +38,4 @@ The TomoChain account and keys could be found here, layout is below which you ca
 
 ### Data Persistence - Where to mount host volume ?
 
-By default, this flist uses the ```/opt``` directory and all data for harmony is within it. 
+By default, this flist uses the ```/opt``` directory and all data for tomochain is within it. 
