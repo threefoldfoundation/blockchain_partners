@@ -31,3 +31,10 @@ Removing intermediate container d9b4fef858f4
 Successfully built 1e6d1a3ce0ea
 Successfully tagged tomo:latest
 ```
+
+### How to run ?
+
+You can then spin the container with your created image. Map host ports as needed,
+
+```docker run -dit --name=tomo --hostname=tomo -p 8545:8545 -p 8546:8546 -p 30303:30303 -p 30303:30303/udp tomo:latest bash```
+
