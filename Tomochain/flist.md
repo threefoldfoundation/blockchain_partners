@@ -22,9 +22,10 @@ Every instance starts with a newly generated Tomo account with the key/password 
 ### Where is TomoChain  ?
 
 The TomoChain account and keys could be found here, layout is below which you can see with tree -dh
+```/opt/keys```
 
-```/opt/keys
-
+*Layout is here
+```
 |-- [4.0K]  data
 |   |-- [4.0K]  tomo
 |   |   |-- [4.0K]  chaindata
