@@ -84,4 +84,4 @@ This should be easy ! Export your docker container as ".tar.gz" and upload it to
 
 ![hub_upload](images/upload_hub.jpg)
 
-#### - Details of flists for Harmony under this link [Tomo flists](flist.md)
+#### - Details of Tomo flists under this link [Tomo flists](flist.md)
