@@ -21,6 +21,6 @@ echo $keypass > ~/.hmy/blskeys/keypass.txt
 blskey=`ls ~/.hmy/blskeys/*.key`
 
 if [ -z "${network}" ]; then network="testnet"; fi
-nohup /opt/node.sh -S -k ~/.hmy/blskeys/$blskey -p keypass.txt -N $network -T explorer -i 1 > /dev/null 2>&1 &
+nohup /opt/node.sh -S -k ~/.hmy/blskeys/$blskey -p keypass.txt -N $network > /dev/null 2>&1 &
 
 exec /usr/sbin/sshd -D
