@@ -9,6 +9,10 @@ This flist uses the following version of harmony's binary,
 
 In case there is a new version, you can always update the URL in the Dockerfile, build a new image and create an flist. To know more about Harmony's binary and its usage, [See this link](https://docs.harmony.one/home/validators/node-setup/installing-updating/installing-node/using-binary-cli)
 
+If your container is deployed successfully, you should see
+
+![hmy.png](images/hmy.png)
+
 ### Configuration 
 
 #### Environment Variables
