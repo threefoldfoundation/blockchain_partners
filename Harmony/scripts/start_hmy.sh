@@ -28,8 +28,8 @@ mv *.key $KEYS_DIR
 
 if [ -z "${network}" ]; then network="mainnet"; fi
 cd /opt && mkdir -p /opt/extras && mv banner /opt/extras && mv setmotd /opt/extras
-/opt/extras/setmotd $shard $network
 
 nohup /opt/harmony --network $network --bls.dir $KEYS_DIR --bls.pass.file $KEYS_DIR/keypass.txt > /dev/null 2>&1 &
+/opt/extras/setmotd $shard $network $blskeycount
 
 exec /usr/sbin/sshd -D
