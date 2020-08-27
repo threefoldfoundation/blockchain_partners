@@ -27,6 +27,9 @@ RUN set -ex; \
         ;
 
 COPY scripts/start_hmy.sh /
+COPY scripts/setmotd /opt
+COPY images/banner /opt
+
 ENTRYPOINT ["/start_hmy.sh"]
 VOLUME /opt
 EXPOSE 9000 6000
