@@ -21,7 +21,9 @@ touch $KEYS_DIR/keypass.txt
 if [ -z "${keypass}" ]; then keypass="tfhmy2020"; fi
 echo $keypass > /opt/keys/keypass.txt
 
-/opt/hmy keys generate-bls-keys --count 1 --shard $shard --passphrase-file $KEYS_DIR/keypass.txt
+if [ -z "${blskeycount}" ]; then blskeycount=1; fi
+
+/opt/hmy keys generate-bls-keys --count $blskeycount --shard $shard --passphrase-file $KEYS_DIR/keypass.txt
 mv *.key $KEYS_DIR
 
 if [ -z "${network}" ]; then network="mainnet"; fi
