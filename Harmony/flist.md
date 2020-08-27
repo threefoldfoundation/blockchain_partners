@@ -2,7 +2,7 @@
 
 Link to flist is herein
 
-[https://hub.grid.tf/arehman/v2-harmony-0-8.flist](https://hub.grid.tf/arehman/v2-harmony-0-8.flist)
+[https://hub.grid.tf/arehman/v2-harmony-0-9.flist](https://hub.grid.tf/arehman/v2-harmony-0-9.flist)
 
 This flist uses the following version of harmony's binary,
 #### Harmony (C) 2020. harmony, version v6268-v2.3.4-0-g7a6fd23f (jenkins@ 2020-08-17T19:56:10+0000)
@@ -16,6 +16,7 @@ In case there is a new version, you can always update the URL in the Dockerfile,
 ```
 * pub_key - This is your SSH public key (ed25519)
 * network - default (mainnet) , else you can specify (mainnet, testnet, staking, partner, stress, devnet, tnet)
+* blskeycount - Number of BLS keys you want to generate (1-4), Default is 1
 * keypass - The bls key password to encrypt your BLS key (default : keypass = tfhmy2020)
 * shard   - The shard associated and possible values (0,1,2,3), Default value is 0
 ```
