@@ -17,7 +17,7 @@ In case there is a new version, you can always update the URL in the Dockerfile,
 * pub_key - This is your SSH public key (ed25519)
 * network - default (mainnet) , else you can specify (mainnet, testnet, staking, partner, stress, devnet, tnet)
 * keypass - The bls key password to encrypt your BLS key (default : keypass = tfhmy2020)
-* shard - Possible values (0,1,2,3), Default value is 0
+* shard   - The shard associated and possible values (0,1,2,3), Default value is 0
 ```
 Every instance starts with a newly generated BLS key with the password provided by you as an environment variable. Alternately, to use your old keys you can copy the keys into the config directory and edit the [Dockerfile](Dockerfile) and modify the script [start_hmy.sh](scripts/start_hmy.sh) to use that key and start your harmony node.
 
@@ -25,7 +25,7 @@ Every instance starts with a newly generated BLS key with the password provided 
 
 The BLS key and the password file could be found here,
 
-``` ~/.hmy/blskeys/ or here /root/.hmy/blskeys/```
+```/opt/keys```
 
 ### Data Persistence - Where to mount host volume ?
 
