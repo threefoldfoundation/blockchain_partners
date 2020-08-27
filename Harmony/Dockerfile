@@ -21,6 +21,7 @@ RUN set -ex; \
         openssh-server \
         iputils-ping \
         git \
+	iproute2 \
         psmisc \
         dnsutils \
         libgmp-dev \

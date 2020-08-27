@@ -21,13 +21,13 @@ touch $KEYS_DIR/keypass.txt
 if [ -z "${keypass}" ]; then keypass="tfhmy2020"; fi
 echo $keypass > /opt/keys/keypass.txt
 
-/opt/hmy keys generate-bls-keys --count 1 --shard ${shard} --passphrase-file $KEYS_DIR/keypass.txt
+/opt/hmy keys generate-bls-keys --count 1 --shard $shard --passphrase-file $KEYS_DIR/keypass.txt
 mv *.key $KEYS_DIR
 
 if [ -z "${network}" ]; then network="mainnet"; fi
 nohup /opt/harmony --network $network --bls.dir $KEYS_DIR --bls.pass.file $KEYS_DIR/keypass.txt > /dev/null 2>&1 &
 
 mkdir -p /opt/extras && mv banner /opt/extras && mv setmotd /opt/extras
-/opt/extras/setmotd ${shard} $network
+/opt/extras/setmotd $shard $network
 
 exec /usr/sbin/sshd -D
