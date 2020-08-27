@@ -2,7 +2,7 @@
 
 Link to flist is herein
 
-[https://hub.grid.tf/arehman/v2-harmony-0-6.flist](https://hub.grid.tf/arehman/v2-harmony-0-6.flist)
+[https://hub.grid.tf/arehman/v2-harmony-0-8.flist](https://hub.grid.tf/arehman/v2-harmony-0-8.flist)
 
 This flist uses the following version of harmony's binary,
 #### Harmony (C) 2020. harmony, version v6268-v2.3.4-0-g7a6fd23f (jenkins@ 2020-08-17T19:56:10+0000)
