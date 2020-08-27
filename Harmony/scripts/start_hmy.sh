@@ -23,13 +23,13 @@ echo $keypass > /opt/keys/keypass.txt
 
 if [ -z "${blskeycount}" ]; then blskeycount=1; fi
 
-/opt/hmy keys generate-bls-keys --count $blskeycount --shard $shard --passphrase-file $KEYS_DIR/keypass.txt
+cd /opt && /opt/hmy keys generate-bls-keys --count $blskeycount --shard $shard --passphrase-file $KEYS_DIR/keypass.txt
 mv *.key $KEYS_DIR
 
 if [ -z "${network}" ]; then network="mainnet"; fi
-nohup /opt/harmony --network $network --bls.dir $KEYS_DIR --bls.pass.file $KEYS_DIR/keypass.txt > /dev/null 2>&1 &
-
-mkdir -p /opt/extras && mv banner /opt/extras && mv setmotd /opt/extras
+cd /opt && mkdir -p /opt/extras && mv banner /opt/extras && mv setmotd /opt/extras
 /opt/extras/setmotd $shard $network
+
+nohup /opt/harmony --network $network --bls.dir $KEYS_DIR --bls.pass.file $KEYS_DIR/keypass.txt > /dev/null 2>&1 &
 
 exec /usr/sbin/sshd -D
