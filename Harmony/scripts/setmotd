@@ -6,8 +6,13 @@ cat /opt/extras/banner > /etc/motd
 wanip="$(dig +short myip.opendns.com @resolver1.opendns.com)"
 blskey=`ls /opt/keys/*.key`
 
+hpid="$(pgrep harmony)"
+hmystatus="is running with PID $hpid"
+if [ -z "${hpid}" ]; then hmystatus="is not running  . . "; fi
+
 echo -e "Harmony Deployment Details\n" >> /etc/motd
 echo "Node Type : Full Node on $network" >> /etc/motd
+echo "Status : Harmony $hmystatus" >> /etc/motd
 echo "WAN IP : $wanip" >> /etc/motd
 echo "BLS KeyFile : $blskey"  >> /etc/motd
 echo "BLS Key Passphrase File : /opt/keys/keypass.txt" >> /etc/motd
