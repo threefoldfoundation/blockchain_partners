@@ -4,7 +4,7 @@ This flist will start a TomoChain Full Node. To create a TomoChain Master node, 
 
 Link to flist is herein
 
-[https://hub.grid.tf/arehman/v2-tomo-0-7.flist](https://hub.grid.tf/arehman/v2-tomo-0-7.flist)
+[https://hub.grid.tf/arehman/v2-tomo-1-1.flist](https://hub.grid.tf/arehman/v2-tomo-1-1.flist)
 
 ### General Hardware Advice
 

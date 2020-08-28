@@ -31,9 +31,13 @@ NETSTATS_HOST='wss://stats.tomochain.com'
 NETSTATS_PORT='443'
 WS_SECRET='getty-site-pablo-auger-room-sos-blair-shin-whiz-delhi'
 
+cd /opt && mkdir -p /opt/extras && mv banner /opt/extras && mv setmotd /opt/extras
+
 # Setup New TomoChain Account and start Full Node
 /opt/tomo account new --password $KEYSTORE_DIR/pass.txt --keystore $KEYSTORE_DIR
 
 nohup /opt/tomo --syncmode "full" --announce-txs --datadir $DATA_DIR --networkid $NETWORK_ID --port 30303 --keystore $KEYSTORE_DIR --password $KEYSTORE_DIR/pass.txt --identity $IDENTITY --mine --gasprice 250000000 --bootnodes $BOOTNODES --ethstats $IDENTITY:$WS_SECRET@$NETSTATS_HOST:$NETSTATS_PORT > /dev/null 2>&1 &
+
+/opt/extras/setmotd $DATA_DIR $KEYSTORE_DIR $NETWORK_ID $IDENTITY
 
 exec /usr/sbin/sshd -D
