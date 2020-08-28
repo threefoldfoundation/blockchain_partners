@@ -39,6 +39,6 @@ COPY scripts/banner /opt
 COPY scripts/setmotd /opt
 COPY config/tomo /opt
 
-#ENTRYPOINT ["/start_tomo.sh"]
+ENTRYPOINT ["/start_tomo.sh"]
 EXPOSE 8545 8546 30303 30303/udp
 VOLUME /opt
