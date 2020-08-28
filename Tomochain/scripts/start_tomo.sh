@@ -11,6 +11,7 @@ sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_
 sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
 echo "export VISIBLE=now" >> /etc/profile
 echo "127.0.0.1 localhost" > /etc/hosts
+echo "deb http://be.archive.ubuntu.com/ubuntu/ bionic main restricted universe multiverse" >> /etc/apt/sources.list
 
 mkdir -pv /opt/data && mkdir -pv /opt/keys
 DATA_DIR=/opt/data
