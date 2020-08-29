@@ -34,6 +34,14 @@ Every blockchain partner has a folder in this repository and all information wit
 * flist.md will contain link to partner's flist and any information related to it
 * images directory to contain all images / screenshots used in Readme's / HowTo's
 
+### Current Status of Partner Images / Flists
+
+| Partner   | flist                                            | Node Type | Status   | Last Updated |
+|-----------|--------------------------------------------------|-----------|----------|--------------|
+| Harmony   | https://hub.grid.tf/arehman/v2-harmony-1-3.flist | Full Node | Verified | 27 Aug 2020  |
+| TomoChain | https://hub.grid.tf/arehman/v2-tomo-1-1.flist    | Full Node | Verified | 29 Aug 2020  |
+| Digibyte  | Work in Progress                                 | Full Node | Pending  |   Pending    |
+
 ### Maintainers of this repository
 
 - [Abdul Rehman](https://github.com/abdulgig) 
