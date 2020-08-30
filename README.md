@@ -16,7 +16,7 @@ This is a public repository where we maintain flists and docker images for our b
 Every blockchain partner has a folder in this repository and all information with respect to that partner is only and only in that folder. The folder structure for the partner is herein,
 
 ```
-├── partners
+├── partner_name
 │   ├── Dockerfile
 │   ├── README.md
 │   ├── config
