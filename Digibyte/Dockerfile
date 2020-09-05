@@ -29,13 +29,15 @@ RUN wget --no-check-certificate https://github.com/digibyte/digibyte/releases/do
 RUN tar -xvzf digibyte-${DIGIBYTE}-x86_64-linux-gnu.tar.gz && rm -f *.tar.gz && mv * dgb
 
 # Set Digibyte Data Directory
-RUN mkdir -pv /digibyte/.digibyte
+RUN mkdir -pv /dgb/.digibyte
 
 # Set Digibyte Configuration
 # Create digibyte.conf file
+COPY config/digibyte.conf /dgb/.digibyte
+COPY scripts/start_dgb.sh /
 
 # Set Digibyte Startup Script
-# ENTRYPOINT ["/start_dgb.sh"]
+ ENTRYPOINT ["/start_dgb.sh"]
 VOLUME /digibyte
 
 # Open P2P & RPC Port
