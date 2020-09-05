@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+chmod -x /etc/update-motd.d/* && touch /etc/motd
+cat /opt/extras/banner > /etc/motd
+wanip="$(dig +short myip.opendns.com @resolver1.opendns.com)"
+
+sleep 5
+dgbpid="$(pgrep digibyte)"
+dgbstatus="is running with PID $dgbpid"
+if [ -z "${dgbpid}" ]; then dgbstatus="is not running  . . "; fi
+
+echo -e "Digibyte Deployment Details\n" >> /etc/motd
+echo "Node Type : Full Node on Mainnet" >> /etc/motd
+echo "Status : Digibyte $dgbstatus" >> /etc/motd
+echo "WAN IP : $wanip" >> /etc/motd
+echo "Digibyte Configuration : /dgb/.digibyte/digibyte.conf" >> /etc/motd
+echo -e "Hosting : ThreeFold Grid\n\n" >> /etc/motd
