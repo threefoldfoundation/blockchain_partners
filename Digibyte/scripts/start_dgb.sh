@@ -13,4 +13,6 @@ echo "export VISIBLE=now" >> /etc/profile
 echo "127.0.0.1 localhost" > /etc/hosts
 echo "deb http://be.archive.ubuntu.com/ubuntu/ bionic main restricted universe multiverse" >> /etc/apt/sources.list
 
+nohup /opt/dgb/bin/digibyted -conf=/dgb/.digibyte/digibyte.conf > /dev/null 2>&1 &
+
 exec /usr/sbin/sshd -D

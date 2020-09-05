@@ -37,7 +37,7 @@ COPY config/digibyte.conf /dgb/.digibyte
 COPY scripts/start_dgb.sh /
 
 # Set Digibyte Startup Script
- ENTRYPOINT ["/start_dgb.sh"]
+ENTRYPOINT ["/start_dgb.sh"]
 VOLUME /digibyte
 
 # Open P2P & RPC Port
