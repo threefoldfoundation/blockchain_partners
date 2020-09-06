@@ -20,4 +20,4 @@ If your container is deployed successfully, you should see
 ```
 * pub_key - This is your SSH public key (ed25519)
 ```
-Edit the [Dockerfile](Dockerfile) and modify the script [start_dgb.sh](scripts/start_dgb.sh) to customize your startup and node settings. 
+Edit the [Dockerfile](Dockerfile) and modify the script [start_dgb.sh](scripts/start_dgb.sh) to customize your startup and node settings. For the node, you can directly modify the [digibyte configuration file](config/digibyte.conf) that is used to build the docker image.
