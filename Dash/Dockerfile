@@ -5,8 +5,6 @@ WORKDIR /opt
 
 # The version of current official release of Dash binary
 ENV DASH=0.15.0.0
-ARG RPCUSERNAME=tfdash
-ARG RPCPASSWORD=tfdash2020
 
 # Get Dependencies
 RUN set -ex; \
