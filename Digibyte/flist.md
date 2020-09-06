@@ -10,3 +10,14 @@ This flist uses the following version of Digibyte's binary,
 In case there is a new version, you can always update the URL in the Dockerfile, build a new image and create an flist. To know more about Digibyte's binary and its usage, [See this link](https://github.com/digibyte/digibyte/releases)
 
 If your container is deployed successfully, you should see
+
+![dgb_start.png](images/dgb_start.png)
+
+### Configuration 
+
+#### Environment Variables
+
+```
+* pub_key - This is your SSH public key (ed25519)
+```
+Edit the [Dockerfile](Dockerfile) and modify the script [start_dgb.sh](scripts/start_dgb.sh) to customize your startup and node settings. 
