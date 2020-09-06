@@ -5,8 +5,6 @@ WORKDIR /opt
 
 # The version of current official release of Digibyte binary
 ENV DIGIBYTE=7.17.2
-ARG RPCUSERNAME=tfdgb
-ARG RPCPASSWORD=tfdgb2020
 
 # Get Dependencies
 RUN set -ex; \
