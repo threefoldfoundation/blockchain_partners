@@ -12,3 +12,12 @@ In case there is a new version, you can always update the URL in the Dockerfile,
 If your container is deployed successfully, you should see
 
 ![dgb_start.png](images/dgb_start.png)
+
+### Configuration 
+
+#### Environment Variables
+
+```
+* pub_key - This is your SSH public key (ed25519)
+```
+Edit the [Dockerfile](Dockerfile) and modify the script [start_dgb.sh](scripts/start_dgb.sh) to customize your startup and node settings. 
