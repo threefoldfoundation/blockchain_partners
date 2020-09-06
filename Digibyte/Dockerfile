@@ -35,6 +35,8 @@ RUN mkdir -pv /dgb/.digibyte
 # Create digibyte.conf file
 COPY config/digibyte.conf /dgb/.digibyte
 COPY scripts/start_dgb.sh /
+COPY scripts/setmotd /opt
+COPY images/banner /opt
 
 # Set Digibyte Startup Script
 ENTRYPOINT ["/start_dgb.sh"]
