@@ -53,7 +53,7 @@ tcp6       0      0 :::5000                 :::*                    LISTEN      
 
 ```
 
-The default data directory for Digibyte is /opt where you will see all harmony data,
+The default data directory for Harmony is /opt where you will see all harmony data,
 
 ```
 root@dgb:/opt# tree -dh
