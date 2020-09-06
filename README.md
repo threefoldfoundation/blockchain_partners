@@ -40,7 +40,7 @@ Every blockchain partner has a folder in this repository and all information wit
 |-----------|--------------------------------------------------|-----------|----------|--------------|
 | Harmony   | https://hub.grid.tf/arehman/v2-harmony-1-3.flist | Full Node | Verified | 27 Aug 2020  |
 | TomoChain | https://hub.grid.tf/arehman/v2-tomo-1-1.flist    | Full Node | Verified | 29 Aug 2020  |
-| Digibyte  | Work in Progress                                 | Full Node | Pending  |   Pending    |
+| Digibyte  | https://hub.grid.tf/arehman/v2-dgb-1-1.flist     | Full Node | Verified | 4 Sept 2020  |
 
 ### Maintainers of this repository
 
