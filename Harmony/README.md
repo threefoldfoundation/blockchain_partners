@@ -53,18 +53,20 @@ tcp6       0      0 :::5000                 :::*                    LISTEN      
 
 ```
 
-The default data directory for harmony is /opt where you will see all harmony data,
+The default data directory for Digibyte is /dgb where you will see all harmony data,
 
 ```
- tree -d
+root@dgb:/dgb/.digibyte# tree -dh
 .
-|-- explorer_storage_0.0.0.0_9000
-|-- harmony_db_0
-|-- harmony_db_1
-`-- latest
+|-- [4.0K]  blocks
+|   `-- [4.0K]  index
+|-- [4.0K]  chainstate
+`-- [4.0K]  database
+
+4 directories
 ```
 
-## Preparing our flist - [Harmony flist is here](flist.md)
+## Preparing our flist - [Digibyte flist is here](flist.md)
 
 This should be easy ! Export your docker container as ".tar.gz" and upload it to Threefold's hub @ [https://hub.grid.tf](https://hub.grid.tf)
 
@@ -72,4 +74,4 @@ This should be easy ! Export your docker container as ".tar.gz" and upload it to
 
 ![hub_upload](images/upload_hub.jpg)
 
-#### - Details of flists for Harmony under this link [Harmony flists](flist.md)
+#### - Details of flists for Digibyte under this link [Digibyte flists](flist.md)
