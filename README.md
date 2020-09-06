@@ -36,6 +36,8 @@ Every blockchain partner has a folder in this repository and all information wit
 
 ### Current Status of Partner Images / Flists
 
+The Full Nodes can be easily converted to validators. For validators, there are some prerequisites and may vary from partner to partner. Most partners require a certain amount of wallet balance for a node to qualify as a validator. Some validators may have specific hardware requirements too.
+
 | Partner   | flist                                            | Node Type | Status   | Last Updated |
 |-----------|--------------------------------------------------|-----------|----------|--------------|
 | Harmony   | https://hub.grid.tf/arehman/v2-harmony-1-3.flist | Full Node | Verified | 27 Aug 2020  |
