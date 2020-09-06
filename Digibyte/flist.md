@@ -10,3 +10,5 @@ This flist uses the following version of Digibyte's binary,
 In case there is a new version, you can always update the URL in the Dockerfile, build a new image and create an flist. To know more about Digibyte's binary and its usage, [See this link](https://github.com/digibyte/digibyte/releases)
 
 If your container is deployed successfully, you should see
+
+![dgb_start.png](images/dgb_start.png)
