@@ -42,4 +42,4 @@ ENTRYPOINT ["/start_dash.sh"]
 VOLUME /dash
 
 # Open P2P & RPC Port
-EXPOSE 12024 14022
+EXPOSE 9998 9999
