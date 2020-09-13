@@ -53,7 +53,7 @@ tcp6       0      0 :::12024                :::*                    LISTEN      
 ```
 
 
-The default data directory for Digibyte is /dgb/.digibyte where you will see all harmony data,
+The default data directory for Digibyte is /dgb/.digibyte where you will see all Digibyte data,
 
 ```
 root@dgb:/dgb/.digibytet# tree -dh
