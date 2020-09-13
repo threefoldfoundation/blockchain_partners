@@ -60,4 +60,28 @@ root        27     1 83 18:29 ?        00:01:12 /opt/dash/bin/dashd -conf=/dash/
 root        56     0  0 18:30 pts/1    00:00:00 bash
 ```
 
+The default data directory for Dash is /dash/.dashcore where you will see all dash data,
+
+```
+:/dash/.dashcore# tree -dh
+.
+|-- [4.0K]  backups
+|-- [4.0K]  blocks
+|   `-- [4.0K]  index
+|-- [4.0K]  chainstate
+|-- [4.0K]  database
+|-- [4.0K]  evodb
+`-- [4.0K]  llmq
+
+7 directories
+```
+## Preparing our flist - [Dash flist is here](flist.md)
+
+This should be easy ! Export your docker container as ".tar.gz" and upload it to Threefold's hub @ [https://hub.grid.tf](https://hub.grid.tf)
+
+```docker export your_container_name > docker export your_container_name.tar.gz```
+
 ![hub_upload](images/upload_hub.jpg)
+
+#### - Details of flists for Dash under this link [Dash flists](flist.md)
+
