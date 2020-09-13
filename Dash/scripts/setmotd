@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+chmod -x /etc/update-motd.d/* && touch /etc/motd
+cat /opt/extras/banner > /etc/motd
+wanip="$(dig +short myip.opendns.com @resolver1.opendns.com)"
+gr='\033[0;32m'
+nc='\033[0m'
+
+sleep 5
+dashpid="$(pgrep dash)"
+dash_status="is running with PID $dashpid"
+if [ -z "${dashpid}" ]; then dash_status="is not running  . . "; fi
+
+echo -e "Dash Node Deployment Details\n" >> /etc/motd
+echo "Node Type : Full Node on Mainnet" >> /etc/motd
+echo "Status : ${gr}Dash $dash_status${nc}" >> /etc/motd
+echo "WAN IP : $wanip" >> /etc/motd
+echo "Dash Node Configuration File : /dash/.dashcore/dash.conf" >> /etc/motd
+echo -e "Hosting : ThreeFold Grid\n\n" >> /etc/motd

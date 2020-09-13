@@ -23,22 +23,22 @@ RUN set -ex; \
 	tree \
         ;
 
-# Get the Binary from github
-RUN wget --no-check-certificate https://github.com/dashpay/dash/releases/download/v${DASH}/dashcore-${DASH}-aarch64-linux-gnu.tar.gz
+# Get the Binary from github // This link can change in the future
+RUN wget --no-check-certificate https://github.com/dashpay/dash/releases/download/v0.15.0.0/dashcore-${DASH}-x86_64-linux-gnu.tar.gz
 RUN tar -xvzf *.tar.gz && rm -f *.tar.gz && mv * dash
 
 # Set Digibyte Data Directory
 RUN mkdir -pv /dash/.dashcore
 
-# Set Digibyte Configuration
-# Create digibyte.conf file
+# Set Dash Configuration
+# Create dash.conf file
 COPY config/dash.conf /dash/.dashcore
-#COPY scripts/start_dgb.sh /
-#COPY scripts/setmotd /opt
-#COPY images/banner /opt
+COPY scripts/start_dash.sh /
+COPY scripts/setmotd /opt
+COPY images/banner /opt
 
 # Set Digibyte Startup Script
-#ENTRYPOINT ["/start_dgb.sh"]
+ENTRYPOINT ["/start_dash.sh"]
 VOLUME /dash
 
 # Open P2P & RPC Port
