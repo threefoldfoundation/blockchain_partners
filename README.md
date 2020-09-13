@@ -43,7 +43,7 @@ The Full Nodes / Staking Nodes / Consensus Nodes can be easily converted to Vali
 | Harmony   | https://hub.grid.tf/arehman/v2-harmony-1-3.flist | Full Node | Verified | 27 Aug 2020  |
 | TomoChain | https://hub.grid.tf/arehman/v2-tomo-1-1.flist    | Full Node | Verified | 29 Aug 2020  |
 | Digibyte  | https://hub.grid.tf/arehman/v2-dgb-1-1.flist     | Full Node | Verified | 4 Sept 2020  |
-| Dash      | Work in Progress                                 | Full Node | Pending  | Pending      |
+| Dash      | https://hub.grid.tf/arehman/v2-dash-1-1.flist    | Full Node | Verified | 13 Sept 2020 |
 | Matic     | Work in Progress                                 | Full Node | Pending  | Pending      |
 
 ### Maintainers of this repository
