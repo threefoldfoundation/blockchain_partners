@@ -13,5 +13,11 @@ If your container is deployed successfully, you should see
 
 ![dash_start.png](images/dash_start.png)
 
+### Configuration 
 
+#### Environment Variables
 
+```
+* pub_key - This is your SSH public key (ed25519)
+```
+Edit the [Dockerfile](Dockerfile) and modify the script [start_dash.sh](scripts/start_dash.sh) to customize your startup and node settings. For the node, you can directly modify the [dash configuration file](config/dash.conf) that is used to build the docker image.
