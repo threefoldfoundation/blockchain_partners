@@ -36,7 +36,7 @@ Every blockchain partner has a folder in this repository and all information wit
 
 ### Current Status of Partner Images / Flists
 
-The Full Nodes can be easily converted to validators. For validators, there are some prerequisites and may vary from partner to partner. Most partners require a certain amount of wallet balance for a node to qualify as a validator. Some validators may have specific hardware requirements too.
+The Full Nodes / Staking Nodes / Consensus Nodes can be easily converted to Validators / Master Nodes. For Validators or Master Nodes, there are some prerequisites and may vary from partner to partner. Most partners require a certain amount of wallet balance for a node to qualify as a Validator or a Master Node. Some may have specific hardware requirements too.
 
 | Partner   | flist                                            | Node Type | Status   | Last Updated |
 |-----------|--------------------------------------------------|-----------|----------|--------------|
