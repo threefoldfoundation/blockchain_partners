@@ -11,5 +11,7 @@ In case there is a new version, you can always update the URL in the Dockerfile,
 
 If your container is deployed successfully, you should see
 
+![dash_start.png](images/dash_start.png)
+
 
 
