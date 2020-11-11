@@ -5,7 +5,7 @@
 ```
 git clone https://github.com/threefoldfoundation/blockchain_partners.git
 cd Digibyte
-docker build --tag hmy:latest .
+docker build --tag dgb:latest .
 ```
 Sit back and relax then ! It should be quicker and you should see a successful message as below,
 
