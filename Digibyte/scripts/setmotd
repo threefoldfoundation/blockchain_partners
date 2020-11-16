@@ -13,5 +13,5 @@ echo -e "Digibyte Deployment Details\n" >> /etc/motd
 echo "Node Type : Full Node on Mainnet" >> /etc/motd
 echo "Status : Digibyte $dgbstatus" >> /etc/motd
 echo "WAN IP : $wanip" >> /etc/motd
-echo "Digibyte Configuration : /dgb/.digibyte/digibyte.conf" >> /etc/motd
+echo "Digibyte Configuration : /opt/digibyte.conf" >> /etc/motd
 echo -e "Hosting : ThreeFold Grid\n\n" >> /etc/motd
