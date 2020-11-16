@@ -10,12 +10,12 @@ echo $pub_key >> /root/.ssh/authorized_keys
 sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
 echo "export VISIBLE=now" >> /etc/profile
-echo "127.0.0.1 localhost" > /etc/hosts
+echo "127.0.0.1 localhost" >> /etc/hosts
 echo "deb http://be.archive.ubuntu.com/ubuntu/ bionic main restricted universe multiverse" >> /etc/apt/sources.list
 
 cd /opt && mkdir -p /opt/extras && mv banner /opt/extras && mv setmotd /opt/extras
 
-nohup /opt/dgb/bin/digibyted -conf=/dgb/.digibyte/digibyte.conf > /dev/null 2>&1 &
+nohup /opt/dgb/bin/digibyted -conf=/opt/digibyte.conf > /dev/null 2>&1 &
 /opt/extras/setmotd
 
 exec /usr/sbin/sshd -D

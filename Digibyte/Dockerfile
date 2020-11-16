@@ -34,7 +34,7 @@ RUN mkdir -pv /dgb/.digibyte
 
 # Set Digibyte Configuration
 # Create digibyte.conf file
-COPY config/digibyte.conf /dgb/.digibyte
+COPY config/digibyte.conf /opt
 COPY scripts/start_dgb.sh /
 COPY scripts/setmotd /opt
 COPY images/banner /opt
