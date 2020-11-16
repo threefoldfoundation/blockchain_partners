@@ -26,7 +26,9 @@ RUN set -ex; \
 RUN wget --no-check-certificate https://github.com/digibyte/digibyte/releases/download/v${DIGIBYTE}/digibyte-${DIGIBYTE}-x86_64-linux-gnu.tar.gz
 RUN tar -xvzf digibyte-${DIGIBYTE}-x86_64-linux-gnu.tar.gz && rm -f *.tar.gz && mv * dgb
 
+#Set temporary access
 RUN echo "root:tfnow2020" | chpasswd
+
 # Set Digibyte Data Directory
 RUN mkdir -pv /dgb/.digibyte
 
