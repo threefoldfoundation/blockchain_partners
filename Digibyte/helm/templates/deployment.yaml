@@ -27,12 +27,19 @@ spec:
       serviceAccountName: {{ include "digibyte.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      volumes:
+        - name: dgb-storage
+          persistentVolumeClaim:
+            claimName: dgb-volume-claim
       containers:
         - name: {{ .Chart.Name }}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          volumeMounts:
+            - name: dgb-storage
+              mountPath: /dgb
           ports:
             - name: ssh
               containerPort: 22
