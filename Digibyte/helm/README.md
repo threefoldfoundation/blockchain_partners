@@ -10,6 +10,8 @@ helm install dgb-node .
 ```
 Here dgb-node is the node name which you can be changed as per requirements. If the install is successful, here is what you should see below,
 
+![helm_deploy](images/helm_deploy_success.png)
+
 ```
 NAME: dgb-node
 LAST DEPLOYED: Tue Nov 17 07:49:37 2020
