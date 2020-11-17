@@ -34,7 +34,10 @@ NAME                TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE
 dgb-node-digibyte   NodePort    10.105.230.76   <none>        22:32268/TCP   46m
 kubernetes          ClusterIP   10.96.0.1       <none>        443/TCP        5d20h
 ```
-Now you can describe the service with kubectl to see details, **kubectl describe svc dgb-node-digibyte**
+Now you can describe the service with kubectl to see details,
+
+**kubectl describe svc dgb-node-digibyte**
+
 ```
 root@k8s-master:~/blockchain_partners/Digibyte/helm# kubectl describe svc dgb-node-digibyte
 Name:                     dgb-node-digibyte
@@ -72,6 +75,8 @@ Once you log in, you should see below,
 ### How to verify the K8s deployment ?
 
 To verify via helm, simply run helm ls
+
+**helm ls**
 
 ```
 root@k8s-master:~/blockchain_partners/Digibyte/helm# helm ls
@@ -138,6 +143,7 @@ Events:
   Normal  ScalingReplicaSet  56m   deployment-controller  Scaled up replica set dgb-node-digibyte-564cf74fc4 to 1
 ```
 
+## Digibyte Pod Persistence
 
 
 
