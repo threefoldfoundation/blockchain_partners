@@ -17,10 +17,14 @@ NAMESPACE: default
 STATUS: deployed
 REVISION: 1
 NOTES:
-You can log into the Digibyte pod:
-  export NODE_PORT=$(kubectl get --namespace default -o jsonpath="{.spec.ports[0].nodePort}" services dgb-node-digibyte)
-  export NODE_IP=$(kubectl get nodes --namespace default -o jsonpath="{.items[0].status.addresses[0].address}")
-  echo "ssh root@$NODE_IP -p $NODE_PORT"
 ```
 
+
+
+Next you need to run the 3 commands to SSH into the pod,
+```
+export NODE_PORT=$(kubectl get --namespace default -o jsonpath="{.spec.ports[0].nodePort}" services dgb-node-digibyte)
+export NODE_IP=$(kubectl get nodes --namespace default -o jsonpath="{.items[0].status.addresses[0].address}")
+echo "ssh root@$NODE_IP -p $NODE_PORT"
+```
 
