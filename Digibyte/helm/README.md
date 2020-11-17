@@ -143,7 +143,18 @@ Events:
   Normal  ScalingReplicaSet  56m   deployment-controller  Scaled up replica set dgb-node-digibyte-564cf74fc4 to 1
 ```
 
-## Digibyte Pod Persistence
+## Digibyte Pod Persistence - Where does the DGB data live ?
+
+The data for the digibyte pod lives in the **/dgb** directory of the host or worker node. The storageClass used uses the host directory for persistence. Based upon your requirements and the size of your K8s cluster, you can change the values in,
+
+* [dgb-volume.yaml](templates/dgb-volume.yaml)
+* [dgb-volume-claim.yaml](templates/dgb-volume-claim.yaml)
+
+
+You can see the contents of the **/dgb** with the tree command,
+
+![dgb-tree.png](../images/dgb-tree.png)
+
 
 
 
