@@ -164,3 +164,10 @@ Technically almost everything is configurable, however, there are are a few valu
 * To change underlying docker images used by the pod, see [values.yaml](values.yaml), under the image section
 * To make changes in the deployment, you may see [deployment.yaml](templates/deployment.yaml)
 
+## Recommended Node Sizes for Digibyte ?
+
+* Minimum 2 cores 
+* 4 GB RAM  
+* 50 GB HDD or SSD
+
+
