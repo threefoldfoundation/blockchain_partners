@@ -24,7 +24,9 @@ This should give you the IP and port to log in. The chart uses the SSH service o
 ssh root@172.31.105.191 -p 32268
 Default root password is tfnow2020
 ```
-You can alternately log in with the pod IP using the following commands,
+You can alternately log in with the pod IP using the following commands. First get the service name and then describe it with kubectl to get the POD endpoint,
+
+**kubectl get svc**
 
 ```
 root@k8s-master:~/blockchain_partners/Digibyte/helm# kubectl get svc
@@ -32,7 +34,7 @@ NAME                TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE
 dgb-node-digibyte   NodePort    10.105.230.76   <none>        22:32268/TCP   46m
 kubernetes          ClusterIP   10.96.0.1       <none>        443/TCP        5d20h
 ```
-*Now you can describe the svc with kubectl to see details,
+Now you can describe the service with kubectl to see details, **kubectl describe svc dgb-node-digibyte**
 ```
 root@k8s-master:~/blockchain_partners/Digibyte/helm# kubectl describe svc dgb-node-digibyte
 Name:                     dgb-node-digibyte
@@ -56,7 +58,7 @@ External Traffic Policy:  Cluster
 Events:                   <none>
 ```
 
-You can also SSH via the endpoint listed without using the NodePort,
+SSH via the endpoint listed without using the NodePort,
 
 ```
 ssh root@192.168.215.86
