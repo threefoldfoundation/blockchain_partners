@@ -24,12 +24,14 @@ Every blockchain partner has a folder in this repository and all information wit
 │   ├── flist.md
 │   ├── images
 │   └── scripts
+    └── helm
 ```
 
 * README.md - Every partner has his own README.md that should contain all the necessary information to deploy their node
 * The Dockerfile contains code on how to build the docker image
 * The examples directory can contain any HowTos or any tutorials or any other helpful information for the community or end users
 * The scripts directory can contain all the scripts to automate, deploy, build, monitor for the partner node
+* helm directory contains helm chart for blockchain node deployent on k8s (Kubernetes)
 * The config directory may contain user specific configuration / settings / files / keys required to build into the image
 * flist.md will contain link to partner's flist and any information related to it
 * images directory to contain all images / screenshots used in Readme's / HowTo's
