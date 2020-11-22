@@ -166,6 +166,6 @@ Technically almost everything is configurable, however, there are are a few valu
 
 * Minimum 2 cores 
 * 4 GB RAM  
-* 50 GB HDD or SSD
+* 80 GB HDD or SSD
 
 
