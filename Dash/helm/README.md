@@ -36,7 +36,7 @@ kubernetes   ClusterIP   10.96.0.1      <none>        443/TCP        11d     <no
 ```
 Now you can describe the service with kubectl to see details,
 
-**kubectl describe svc dgb-node-digibyte**
+**kubectl describe svc dash**
 
 ```
 root@k8s-master:~/blockchain_partners/Dash/helm# kubectl describe svc dash
@@ -151,18 +151,18 @@ The data for the dash pod lives in the **/dash** directory of the host or worker
 
 You can see the contents of the **/dash** with the tree command,
 
-![dgb-tree.png](../images/dgb-tree.png)
+![dash-tree.png](../images/dash-tree.png)
 
 ## Configurable Values ?
 
 Technically almost everything is configurable, however, there are are a few values that you may want to change as this is just a dry run,
 
 * For compute, you can see [values.yaml](values.yaml), under the resources section
-* For storage and volumes, you can see [dgb-volume.yaml](templates/dgb-volume.yaml) and [dgb-volume-claim.yaml](templates/dgb-volume-claim.yaml)
+* For storage and volumes, you can see [dash-volume.yaml](templates/dash-volume.yaml) and [dash-volume-claim.yaml](templates/dash-volume-claim.yaml)
 * To change underlying docker images used by the pod, see [values.yaml](values.yaml), under the image section
 * To make changes in the deployment, you may see [deployment.yaml](templates/deployment.yaml)
 
-## Recommended Node Sizes for Digibyte ?
+## Recommended Node Sizes for Dash ?
 
 * Minimum 2 cores 
 * 4 GB RAM  
