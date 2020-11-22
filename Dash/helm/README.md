@@ -39,23 +39,23 @@ Now you can describe the service with kubectl to see details,
 **kubectl describe svc dgb-node-digibyte**
 
 ```
-root@k8s-master:~/blockchain_partners/Digibyte/helm# kubectl describe svc dgb-node-digibyte
-Name:                     dgb-node-digibyte
+root@k8s-master:~/blockchain_partners/Dash/helm# kubectl describe svc dash
+Name:                     dash
 Namespace:                default
-Labels:                   app.kubernetes.io/instance=dgb-node
+Labels:                   app.kubernetes.io/instance=dash
                           app.kubernetes.io/managed-by=Helm
-                          app.kubernetes.io/name=digibyte
+                          app.kubernetes.io/name=dash
                           app.kubernetes.io/version=1.16.0
-                          helm.sh/chart=digibyte-0.1.0
-Annotations:              meta.helm.sh/release-name: dgb-node
+                          helm.sh/chart=dash-0.1.0
+Annotations:              meta.helm.sh/release-name: dash
                           meta.helm.sh/release-namespace: default
-Selector:                 app.kubernetes.io/instance=dgb-node,app.kubernetes.io/name=digibyte
+Selector:                 app.kubernetes.io/instance=dash,app.kubernetes.io/name=dash
 Type:                     NodePort
-IP:                       10.105.230.76
+IP:                       10.102.200.184
 Port:                     ssh  22/TCP
-TargetPort:               ssh/TCP
-NodePort:                 ssh  32268/TCP
-Endpoints:                192.168.215.86:22
+TargetPort:               22/TCP
+NodePort:                 ssh  31843/TCP
+Endpoints:                192.168.215.120:22
 Session Affinity:         None
 External Traffic Policy:  Cluster
 Events:                   <none>
