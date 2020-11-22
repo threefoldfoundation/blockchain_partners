@@ -70,7 +70,7 @@ Default root password is tfnow2020
 
 Once you log in, you should see below,
 
-![dgb_start.png](../images/dgb_start.png)
+![dash_start.png](../images/dash_start.png)
 
 ### How to verify the K8s deployment ?
 
