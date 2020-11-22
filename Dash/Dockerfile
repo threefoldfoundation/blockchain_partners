@@ -32,7 +32,7 @@ RUN mkdir -pv /dash/.dashcore
 
 # Set Dash Configuration
 # Create dash.conf file
-COPY config/dash.conf /dash/.dashcore
+COPY config/dash.conf /opt
 COPY scripts/start_dash.sh /
 COPY scripts/setmotd /opt
 COPY images/banner /opt
