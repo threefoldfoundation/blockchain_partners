@@ -1,4 +1,4 @@
-You can log into the Digibyte pod:
+You can log into the Digibyte pod and execute the commands below:
 {{- if .Values.ingress.enabled }}
 {{- range $host := .Values.ingress.hosts }}
   {{- range .paths }}
