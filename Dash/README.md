@@ -1,6 +1,6 @@
 # Dash
 
-To Deploy on Kubernetes, see this link  [Digibyte Helm Charts for K8s](helm)
+To Deploy on Kubernetes, see this link  [Dash Helm Charts for K8s](helm)
 
 ### How to build from the Dockerfile ?
 
