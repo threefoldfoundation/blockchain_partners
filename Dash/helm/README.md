@@ -29,10 +29,10 @@ You can alternately log in with the pod IP using the following commands. First g
 **kubectl get svc**
 
 ```
-root@k8s-master:~/blockchain_partners/Digibyte/helm# kubectl get svc
-NAME                TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE
-dgb-node-digibyte   NodePort    10.105.230.76   <none>        22:32268/TCP   46m
-kubernetes          ClusterIP   10.96.0.1       <none>        443/TCP        5d20h
+root@k8s-master:~/blockchain_partners/Dash/helm# kubectl get svc -o wide
+NAME         TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE     SELECTOR
+dash         NodePort    10.100.91.76   <none>        22:32613/TCP   8m23s   app.kubernetes.io/instance=dash,app.kubernetes.io/name=dash
+kubernetes   ClusterIP   10.96.0.1      <none>        443/TCP        11d     <none>
 ```
 Now you can describe the service with kubectl to see details,
 
