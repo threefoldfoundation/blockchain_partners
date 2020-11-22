@@ -10,7 +10,7 @@ helm install dash-node .
 ```
 Here dash-node is the node name which you can be changed as per requirements. If the install is successful, here is what you should see below,
 
-![](../images/helm_deploy_success.png)
+![](../images/helm-deploy-success.png)
 
 Next you need to run the 3 commands to SSH into the pod,
 ```
