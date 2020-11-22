@@ -15,5 +15,5 @@ echo -e "Dash Node Deployment Details\n" >> /etc/motd
 echo "Node Type : Full Node on Mainnet" >> /etc/motd
 echo -e "Status : ${gr} Dash $dash_status ${nc}" >> /etc/motd
 echo "WAN IP : $wanip" >> /etc/motd
-echo "Dash Node Configuration File : /dash/.dashcore/dash.conf" >> /etc/motd
+echo "Dash Node Configuration File : /opt/dash.conf" >> /etc/motd
 echo -e "Hosting : ThreeFold Grid\n\n" >> /etc/motd

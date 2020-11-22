@@ -30,7 +30,7 @@ RUN tar -xvzf digibyte-${DIGIBYTE}-x86_64-linux-gnu.tar.gz && rm -f *.tar.gz && 
 RUN echo "root:tfnow2020" | chpasswd
 
 # Set Digibyte Data Directory
-RUN mkdir -pv /dgb/.digibyte
+RUN mkdir -pv /dgb
 
 # Set Digibyte Configuration
 # Create digibyte.conf file

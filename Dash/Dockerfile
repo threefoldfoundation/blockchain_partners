@@ -28,7 +28,10 @@ RUN wget --no-check-certificate https://github.com/dashpay/dash/releases/downloa
 RUN tar -xvzf *.tar.gz && rm -f *.tar.gz && mv * dash
 
 # Set Digibyte Data Directory
-RUN mkdir -pv /dash/.dashcore
+RUN mkdir -pv /dash
+
+#Set temporary access
+RUN echo "root:tfnow2020" | chpasswd
 
 # Set Dash Configuration
 # Create dash.conf file
