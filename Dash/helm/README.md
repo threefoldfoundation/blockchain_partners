@@ -79,56 +79,55 @@ To verify via helm, simply run helm ls
 **helm ls**
 
 ```
-root@k8s-master:~/blockchain_partners/Digibyte/helm# helm ls
-NAME            NAMESPACE       REVISION        UPDATED                                 STATUS          CHART           APP VERSION
-dgb-node        default         1               2020-11-17 07:49:37.596095802 +0000 UTC deployed        digibyte-0.1.0  1.16.0
+root@k8s-master:~/blockchain_partners/Dash/helm# helm ls
+NAME    NAMESPACE       REVISION        UPDATED                                 STATUS          CHART           APP VERSION
+dash    default         1               2020-11-22 16:54:31.640808286 +0000 UTC deployed        dash-0.1.0      1.16.0
 ```
 
 Also, you can check via kubectl with the following commands,
 
 ```
-root@k8s-master:~/blockchain_partners/Digibyte/helm# kubectl get deployments
-NAME                READY   UP-TO-DATE   AVAILABLE   AGE
-dgb-node-digibyte   1/1     1            1           44m
-
+root@k8s-master:~/blockchain_partners/Dash/helm# kubectl get deployments -o wide
+NAME   READY   UP-TO-DATE   AVAILABLE   AGE    CONTAINERS   IMAGES                 SELECTOR
+dash   1/1     1            1           7m7s   dash         arrajput/dash:latest   app.kubernetes.io/instance=dash,app.kubernetes.io/name=dash
 ```
 
 To dig deeper, use kubectl to describe your deployment,
 
 ```
-root@k8s-master:~/blockchain_partners/Digibyte/helm# kubectl describe deployment dgb-node-digibyte
-Name:                   dgb-node-digibyte
+root@k8s-master:~/blockchain_partners/Dash/helm# kubectl describe deployment dash
+Name:                   dash
 Namespace:              default
-CreationTimestamp:      Tue, 17 Nov 2020 07:49:38 +0000
-Labels:                 app.kubernetes.io/instance=dgb-node
+CreationTimestamp:      Sun, 22 Nov 2020 16:54:31 +0000
+Labels:                 app.kubernetes.io/instance=dash
                         app.kubernetes.io/managed-by=Helm
-                        app.kubernetes.io/name=digibyte
+                        app.kubernetes.io/name=dash
                         app.kubernetes.io/version=1.16.0
-                        helm.sh/chart=digibyte-0.1.0
+                        helm.sh/chart=dash-0.1.0
 Annotations:            deployment.kubernetes.io/revision: 1
-                        meta.helm.sh/release-name: dgb-node
+                        meta.helm.sh/release-name: dash
                         meta.helm.sh/release-namespace: default
-Selector:               app.kubernetes.io/instance=dgb-node,app.kubernetes.io/name=digibyte
+Selector:               app.kubernetes.io/instance=dash,app.kubernetes.io/name=dash
 Replicas:               1 desired | 1 updated | 1 total | 1 available | 0 unavailable
 StrategyType:           RollingUpdate
 MinReadySeconds:        0
 RollingUpdateStrategy:  25% max unavailable, 25% max surge
 Pod Template:
-  Labels:           app.kubernetes.io/instance=dgb-node
-                    app.kubernetes.io/name=digibyte
-  Service Account:  dgb-node-digibyte
+  Labels:           app.kubernetes.io/instance=dash
+                    app.kubernetes.io/name=dash
+  Service Account:  dash
   Containers:
-   digibyte:
-    Image:        arrajput/digibyte:latest
+   dash:
+    Image:        arrajput/dash:latest
     Port:         22/TCP
     Host Port:    0/TCP
     Environment:  <none>
     Mounts:
-      /dgb from dgb-storage (rw)
+      /dash from dash-storage (rw)
   Volumes:
-   dgb-storage:
+   dash-storage:
     Type:       PersistentVolumeClaim (a reference to a PersistentVolumeClaim in the same namespace)
-    ClaimName:  dgb-volume-claim
+    ClaimName:  dash-volume-claim
     ReadOnly:   false
 Conditions:
   Type           Status  Reason
@@ -136,22 +135,21 @@ Conditions:
   Available      True    MinimumReplicasAvailable
   Progressing    True    NewReplicaSetAvailable
 OldReplicaSets:  <none>
-NewReplicaSet:   dgb-node-digibyte-564cf74fc4 (1/1 replicas created)
+NewReplicaSet:   dash-57c9c84555 (1/1 replicas created)
 Events:
   Type    Reason             Age   From                   Message
   ----    ------             ----  ----                   -------
-  Normal  ScalingReplicaSet  56m   deployment-controller  Scaled up replica set dgb-node-digibyte-564cf74fc4 to 1
+  Normal  ScalingReplicaSet  8m6s  deployment-controller  Scaled up replica set dash-57c9c84555 to 1
 ```
 
-## Digibyte Pod Persistence - Where does the DGB data live ?
+## Dash Persistence - Where does the DASH data live ?
 
-The data for the digibyte pod lives in the **/dgb** directory of the host or worker node. The storageClass used uses the host directory for persistence. Based upon your requirements and the size of your K8s cluster, you can change the values in,
+The data for the dash pod lives in the **/dash** directory of the host or worker node. The storageClass used uses the host directory for persistence. Based upon your requirements and the size of your K8s cluster, you can change the values in,
 
-* [dgb-volume.yaml](templates/dgb-volume.yaml)
-* [dgb-volume-claim.yaml](templates/dgb-volume-claim.yaml)
+* [dash-volume.yaml](templates/dash-volume.yaml)
+* [dash-volume-claim.yaml](templates/dash-volume-claim.yaml)
 
-
-You can see the contents of the **/dgb** with the tree command,
+You can see the contents of the **/dash** with the tree command,
 
 ![dgb-tree.png](../images/dgb-tree.png)
 
