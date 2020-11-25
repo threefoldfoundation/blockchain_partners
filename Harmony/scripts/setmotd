@@ -19,6 +19,6 @@ echo "Status : Harmony $hmystatus" >> /etc/motd
 echo "WAN IP : $wanip" >> /etc/motd
 echo "Keys Loaded : $keycount" >> /etc/motd
 echo "BLS KeyFile : $blskey"  >> /etc/motd
-echo "BLS Key Passphrase File : /opt/keys/keypass.txt" >> /etc/motd
+echo "BLS Key Passphrase File : /hmydata/keys/keypass.txt" >> /etc/motd
 echo "Shard : $shard" >> /etc/motd
 echo -e "Hosting : ThreeFold Grid\n\n" >> /etc/motd
