@@ -36,29 +36,30 @@ kubernetes         ClusterIP   10.96.0.1        <none>        443/TCP        14d
 ```
 Now you can describe the service with kubectl to see details,
 
-**kubectl describe svc dash**
+**kubectl describe svc hmy-node-harmony**
 
 ```
-root@k8s-master:~/blockchain_partners/Dash/helm# kubectl describe svc dash
-Name:                     dash
+root@k8s-master:~/blockchain_partners/Harmony/helm# kubectl describe svc hmy-node-harmony
+Name:                     hmy-node-harmony
 Namespace:                default
-Labels:                   app.kubernetes.io/instance=dash
+Labels:                   app.kubernetes.io/instance=hmy-node
                           app.kubernetes.io/managed-by=Helm
-                          app.kubernetes.io/name=dash
+                          app.kubernetes.io/name=harmony
                           app.kubernetes.io/version=1.16.0
-                          helm.sh/chart=dash-0.1.0
-Annotations:              meta.helm.sh/release-name: dash
+                          helm.sh/chart=harmony-0.1.0
+Annotations:              meta.helm.sh/release-name: hmy-node
                           meta.helm.sh/release-namespace: default
-Selector:                 app.kubernetes.io/instance=dash,app.kubernetes.io/name=dash
+Selector:                 app.kubernetes.io/instance=hmy-node,app.kubernetes.io/name=harmony
 Type:                     NodePort
-IP:                       10.102.200.184
+IP:                       10.100.57.130
 Port:                     ssh  22/TCP
-TargetPort:               22/TCP
-NodePort:                 ssh  31843/TCP
-Endpoints:                192.168.215.120:22
+TargetPort:               ssh/TCP
+NodePort:                 ssh  32630/TCP
+Endpoints:                192.168.215.112:22
 Session Affinity:         None
 External Traffic Policy:  Cluster
 Events:                   <none>
+
 ```
 
 SSH via the endpoint listed without using the NodePort,
