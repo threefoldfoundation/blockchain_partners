@@ -2,6 +2,9 @@
 FROM ubuntu:18.04
 
 LABEL maintainer="abdul@incubaid.com"
+
+# Set Digibyte Data Directory
+RUN mkdir -pv /hmydata
 WORKDIR /opt
 
 # Get me all the Harmony binaries
@@ -27,10 +30,13 @@ RUN set -ex; \
         libgmp-dev \
         ;
 
+#Set temporary access
+RUN echo "root:tfnow2020" | chpasswd
+
 COPY scripts/start_hmy.sh /
 COPY scripts/setmotd /opt
 COPY images/banner /opt
 
 ENTRYPOINT ["/start_hmy.sh"]
-VOLUME /opt
+VOLUME /hmydata
 EXPOSE 9000 6000
