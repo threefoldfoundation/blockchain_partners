@@ -1,14 +1,14 @@
-## Dash - Helm chart for Kubernetes Deployment
+## Harmony - Helm chart for Kubernetes Deployment
 
-This is a basic helm chart that allows to run Dash full node on a Kubernetes cluster.
+This is a basic helm chart that allows to run Harmony full node on a Kubernetes cluster.
 
 ### How to Deploy ?
 ```
 git clone https://github.com/threefoldfoundation/blockchain_partners.git
-cd Dash/helm
-helm install dash-node .
+cd Harmony/helm
+helm install hmy-node .
 ```
-Here dash-node is the node name which you can be changed as per requirements. If the install is successful, here is what you should see below,
+Here hmy-node is the node name which you can be changed as per requirements. If the install is successful, here is what you should see below,
 
 ![](../images/helm-deploy-success.png)
 
