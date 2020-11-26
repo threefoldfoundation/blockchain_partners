@@ -149,7 +149,7 @@ The data for the dash pod lives in the **/hmydata** directory of the host or wor
 
 You can see the contents of the **/hmydata** with the tree command,
 
-![dash-tree.png](../images/dash-tree.png)
+![hmy-tree.png](../images/hmy-tree.png)
 
 ## Configurable Values ?
 
