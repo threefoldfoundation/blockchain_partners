@@ -156,11 +156,11 @@ You can see the contents of the **/hmydata** with the tree command,
 Technically almost everything is configurable, however, there are are a few values that you may want to change as this is just a dry run,
 
 * For compute, you can see [values.yaml](values.yaml), under the resources section
-* For storage and volumes, you can see [dash-volume.yaml](templates/dash-volume.yaml) and [dash-volume-claim.yaml](templates/dash-volume-claim.yaml)
+* For storage and volumes, you can see [hmy-volume.yaml](templates/hmy-volume.yaml) and [hmy-volume-claim.yaml](templates/hmy-volume-claim.yaml)
 * To change underlying docker images used by the pod, see [values.yaml](values.yaml), under the image section
 * To make changes in the deployment, you may see [deployment.yaml](templates/deployment.yaml)
 
-## Recommended Node Sizes for Dash ?
+## Recommended Node Sizes for Harmony ?
 
 * Minimum 2 cores 
 * 4 GB RAM  
