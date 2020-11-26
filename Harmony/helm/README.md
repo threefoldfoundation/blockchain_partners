@@ -144,8 +144,8 @@ Events:          <none>
 
 The data for the dash pod lives in the **/hmydata** directory of the host or worker node. The storageClass used uses the host directory for persistence. Based upon your requirements and the size of your K8s cluster, you can change the values in,
 
-* [hmy-volume.yaml](templates/dash-volume.yaml)
-* [hmy-volume-claim.yaml](templates/dash-volume-claim.yaml)
+* [hmy-volume.yaml](templates/hmy-volume.yaml)
+* [hmy-volume-claim.yaml](templates/hmy-volume-claim.yaml)
 
 You can see the contents of the **/hmydata** with the tree command,
 
