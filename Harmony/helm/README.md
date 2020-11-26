@@ -80,55 +80,55 @@ To verify via helm, simply run helm ls
 **helm ls**
 
 ```
-root@k8s-master:~/blockchain_partners/Dash/helm# helm ls
-NAME    NAMESPACE       REVISION        UPDATED                                 STATUS          CHART           APP VERSION
-dash    default         1               2020-11-22 16:54:31.640808286 +0000 UTC deployed        dash-0.1.0      1.16.0
+root@k8s-master:~/blockchain_partners/Harmony/helm# helm ls
+NAME            NAMESPACE       REVISION        UPDATED                                 STATUS          CHART           APP VERSION
+hmy-node        default         1               2020-11-26 08:16:02.787063465 +0000 UTC deployed        harmony-0.1.0   1.16.0
 ```
 
 Also, you can check via kubectl with the following commands,
 
 ```
-root@k8s-master:~/blockchain_partners/Dash/helm# kubectl get deployments -o wide
-NAME   READY   UP-TO-DATE   AVAILABLE   AGE    CONTAINERS   IMAGES                 SELECTOR
-dash   1/1     1            1           7m7s   dash         arrajput/dash:latest   app.kubernetes.io/instance=dash,app.kubernetes.io/name=dash
+root@k8s-master:~/blockchain_partners/Harmony/helm# kubectl get deployments -o wide
+NAME               READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS   IMAGES                SELECTOR
+hmy-node-harmony   1/1     1            1           92m   harmony      arrajput/hmy:latest   app.kubernetes.io/instance=hmy-node,app.kubernetes.io/name=harmony
 ```
 
 To dig deeper, use kubectl to describe your deployment,
 
 ```
-root@k8s-master:~/blockchain_partners/Dash/helm# kubectl describe deployment dash
-Name:                   dash
+root@k8s-master:~/blockchain_partners/Harmony/helm# kubectl describe deployment hmy-node
+Name:                   hmy-node-harmony
 Namespace:              default
-CreationTimestamp:      Sun, 22 Nov 2020 16:54:31 +0000
-Labels:                 app.kubernetes.io/instance=dash
+CreationTimestamp:      Thu, 26 Nov 2020 08:16:07 +0000
+Labels:                 app.kubernetes.io/instance=hmy-node
                         app.kubernetes.io/managed-by=Helm
-                        app.kubernetes.io/name=dash
+                        app.kubernetes.io/name=harmony
                         app.kubernetes.io/version=1.16.0
-                        helm.sh/chart=dash-0.1.0
+                        helm.sh/chart=harmony-0.1.0
 Annotations:            deployment.kubernetes.io/revision: 1
-                        meta.helm.sh/release-name: dash
+                        meta.helm.sh/release-name: hmy-node
                         meta.helm.sh/release-namespace: default
-Selector:               app.kubernetes.io/instance=dash,app.kubernetes.io/name=dash
+Selector:               app.kubernetes.io/instance=hmy-node,app.kubernetes.io/name=harmony
 Replicas:               1 desired | 1 updated | 1 total | 1 available | 0 unavailable
 StrategyType:           RollingUpdate
 MinReadySeconds:        0
 RollingUpdateStrategy:  25% max unavailable, 25% max surge
 Pod Template:
-  Labels:           app.kubernetes.io/instance=dash
-                    app.kubernetes.io/name=dash
-  Service Account:  dash
+  Labels:           app.kubernetes.io/instance=hmy-node
+                    app.kubernetes.io/name=harmony
+  Service Account:  hmy-node-harmony
   Containers:
-   dash:
-    Image:        arrajput/dash:latest
+   harmony:
+    Image:        arrajput/hmy:latest
     Port:         22/TCP
     Host Port:    0/TCP
     Environment:  <none>
     Mounts:
-      /dash from dash-storage (rw)
+      /hmydata from hmy-storage (rw)
   Volumes:
-   dash-storage:
+   hmy-storage:
     Type:       PersistentVolumeClaim (a reference to a PersistentVolumeClaim in the same namespace)
-    ClaimName:  dash-volume-claim
+    ClaimName:  hmy-volume-claim
     ReadOnly:   false
 Conditions:
   Type           Status  Reason
@@ -136,21 +136,18 @@ Conditions:
   Available      True    MinimumReplicasAvailable
   Progressing    True    NewReplicaSetAvailable
 OldReplicaSets:  <none>
-NewReplicaSet:   dash-57c9c84555 (1/1 replicas created)
-Events:
-  Type    Reason             Age   From                   Message
-  ----    ------             ----  ----                   -------
-  Normal  ScalingReplicaSet  8m6s  deployment-controller  Scaled up replica set dash-57c9c84555 to 1
+NewReplicaSet:   hmy-node-harmony-784c98f696 (1/1 replicas created)
+Events:          <none>
 ```
 
-## Dash Persistence - Where does the DASH data live ?
+## Harmony Persistence - Where does the HARMONY data live ?
 
-The data for the dash pod lives in the **/dash** directory of the host or worker node. The storageClass used uses the host directory for persistence. Based upon your requirements and the size of your K8s cluster, you can change the values in,
+The data for the dash pod lives in the **/hmydata** directory of the host or worker node. The storageClass used uses the host directory for persistence. Based upon your requirements and the size of your K8s cluster, you can change the values in,
 
-* [dash-volume.yaml](templates/dash-volume.yaml)
-* [dash-volume-claim.yaml](templates/dash-volume-claim.yaml)
+* [hmy-volume.yaml](templates/dash-volume.yaml)
+* [hmy-volume-claim.yaml](templates/dash-volume-claim.yaml)
 
-You can see the contents of the **/dash** with the tree command,
+You can see the contents of the **/hmydata** with the tree command,
 
 ![dash-tree.png](../images/dash-tree.png)
 
