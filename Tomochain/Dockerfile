@@ -1,6 +1,9 @@
 # Setup the base image
 FROM ubuntu:18.04
 LABEL maintainer="abdul@incubaid.com"
+
+# Set Digibyte Data Directory
+RUN mkdir -pv /tomodata
 WORKDIR /opt
 
 # Install dependencies
@@ -34,6 +37,9 @@ ENV WS_SECRET ''
 ENV NETSTATS_HOST ''
 ENV NETSTATS_PORT ''
 
+#Set temporary access
+RUN echo "root:tfnow2020" | chpasswd
+
 COPY scripts/start_tomo.sh /
 COPY scripts/banner /opt
 COPY scripts/setmotd /opt
@@ -41,4 +47,4 @@ COPY config/tomo /opt
 
 ENTRYPOINT ["/start_tomo.sh"]
 EXPOSE 8545 8546 30303 30303/udp
-VOLUME /opt
+VOLUME /tomodata
