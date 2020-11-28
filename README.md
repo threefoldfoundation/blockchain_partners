@@ -47,7 +47,6 @@ The Full Nodes / Staking Nodes / Consensus Nodes can be easily converted to Vali
 | Digibyte  | https://hub.grid.tf/arehman/v2-dgb-1-1.flist     | Full Node | Verified | 4 Sept 2020  |
 | Dash      | https://hub.grid.tf/arehman/v2-dash-1-1.flist    | Full Node | Verified | 11 Sept 2020 |
 | Matic     | Work in Progress                                 | Full Node | Pending  | 4 Oct 2020   |
-| Neo       | Work in Progress                                 | Full Node | Pending  | Pending      |
 
 ### Maintainers of this repository
 
