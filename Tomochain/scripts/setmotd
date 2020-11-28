@@ -7,7 +7,7 @@ identity=$4
 chmod -x /etc/update-motd.d/* && touch /etc/motd
 cat /opt/extras/banner > /etc/motd
 wanip="$(dig +short myip.opendns.com @resolver1.opendns.com)"
-tomokey=`ls /opt/keys/UTC*`
+tomokey=`ls $keystore_dir/UTC*`
 sleep 5
 
 gr='\033[0;32m'
