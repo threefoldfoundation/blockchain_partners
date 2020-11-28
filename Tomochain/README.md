@@ -1,5 +1,7 @@
 # Tomochain
 
+To Deploy on Kubernetes, see this link  [TomoChain Helm Charts for K8s](helm)
+
 ### How to build from the Dockerfile ?
 
 ```
