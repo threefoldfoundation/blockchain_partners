@@ -18,12 +18,13 @@ echo "deb http://be.archive.ubuntu.com/ubuntu/ bionic main restricted universe m
 #nohup /opt/dash/bin/dashd -conf=/opt/dash.conf > /dev/null 2>&1 &
 #/opt/extras/setmotd
 /etc/init.d/rabbitmq-server start
-rm -f /heimdalld* && mkdir -p /matic-data/.heimdalld && heimdalld init --home /matic-data/.heimdalld
-echo "export HEIMDALLDIR=/matic-data/.heimdalld" >> ~/.bashrc 
+HEIMDALLDIR=/matic-data/heimdalld
+rm -f /heimdalld* && mkdir -p /matic-data/.heimdalld && heimdalld init --home $HEIMDALLDIR
+echo "export HEIMDALLDIR=/matic-data/heimdalld" >> ~/.bashrc 
 
-#Matic Testnet Configuration
-CONFIGPATH=/opt/public-testnets/CS-2008/sentry/sentry
-echo "export CONFIGPATH=/opt/public-testnets/CS-2008/sentry/sentry" >> ~/.bashrc
+#Matic Testnet Configuration - Heimdall
+CONFIGPATH=/opt/public-testnets/CS-2008/without-sentry
+echo "export CONFIGPATH=/opt/public-testnets/CS-2008/without-sentry" >> ~/.bashrc
 source ~/.bashrc
 cp $CONFIGPATH/heimdall/config/genesis.json  $HEIMDALLDIR/config/genesis.json
 cp $CONFIGPATH/heimdall/config/heimdall-config.toml $HEIMDALLDIR/config/heimdall-config.toml
@@ -40,10 +41,19 @@ sed -i "s/.*private_peer_ids =.*/private_peer_ids = '$nodeID'/" $HEIMDALLDIR/con
 sed -i "s/.*addr_book_strict =.*/addr_book_strict = false/" $HEIMDALLDIR/config/config.toml
 sed -i "s/.*persistent_peers =.*/persistent_peers = 'fbeddf0bc0f31aa55fc8d798b426385842c93ac7@18.214.246.244:26656'/" $HEIMDALLDIR/config/config.toml
 
-#Starting Services
+#Starting Heimdall Services
 mkdir $HEIMDALLDIR/logs
 heimdalld start --home $HEIMDALLDIR > $HEIMDALLDIR/logs/heimdalld.log 2>&1 &
 heimdalld rest-server --home $HEIMDALLDIR > $HEIMDALLDIR/logs/heimdalld-rest-server.log 2>&1 &
 bridge start --all --home $HEIMDALLDIR > $HEIMDALLDIR/logs/heimdalld-bridge.log 2>&1 &
+
+#Bor Configuration
+BOR_CONFIG=/opt/public-testnets/CS-2008/without-sentry/bor
+BOR_DIR=/matic-data/bor
+cd $BOR_CONFIG && echo "export BOR_DIR=/matic-data/bor" >> ~/.bashrc
+mkdir -p $BOR_DIR/data ## && mkdir -p $BOR_DIR/logs && mkdir -p $BOR_DIR/keystore
+cp static-nodes.json genesis.json $BOR_DIR/data 
+bor --datadir $BOR_DIR/data init ./genesis.json
+cd $BOR_DIR/data/keystore && heimdallcli generate-keystore $ETH_PRIV_KEY && echo "tfnow2020" > $BOR_DIR/password.txt
 
 exec /usr/sbin/sshd -D
