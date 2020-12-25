@@ -21,6 +21,9 @@ echo "deb http://be.archive.ubuntu.com/ubuntu/ bionic main restricted universe m
 HEIMDALLDIR=/matic-data/heimdalld
 rm -f /heimdalld* && mkdir -p /matic-data/heimdalld && heimdalld init --home $HEIMDALLDIR
 echo "export HEIMDALLDIR=/matic-data/heimdalld" >> ~/.bashrc 
+ETH_PRIV_KEY=`heimdalld show-privatekey --home $HEIMDALLDIR | jq .priv_key | tr -d '"'`
+ETH_PRIV_KEY=`echo $ETH_PRIV_KEY | tr -d '[:cntrl:]'`
+echo "$ETH_PRIV_KEY" >> /tmp/vars.txt
 
 #Matic Configuration Heimdall
 CONFIGPATH=/opt/launch/mainnet-v1/sentry/validator
@@ -47,11 +50,17 @@ bridge start --all --home $HEIMDALLDIR > $HEIMDALLDIR/logs/heimdalld-bridge.log 
 #Matic Configuration Bor
 BORCONFIG=/opt/launch/mainnet-v1/sentry/validator/bor
 BOR_DIR=/matic-data/bor && DATA_DIR=$BOR_DIR/data
-mkdir -p $BOR_DIR #$BOR_DIR/keystore
+mkdir -p $BOR_DIR 
 bor --datadir $DATA_DIR init $BORCONFIG/genesis.json
 cp $BORCONFIG/static-nodes.json $DATA_DIR/bor/static-nodes.json
 cd $DATA_DIR/bor/ && bootnode -genkey nodekey
-cd /opt/heimdall && echo "tfnow2020" > password.txt && go run keystore.go $ETH_PRIV_KEY password.txt
+cd /opt/heimdall && echo "tfnow2020" > password.txt && go run keystore.go $ETH_PRIV_KEY password.txt 2>&1
 cp UTC* $DATA_DIR/keystore && cp password.txt $BOR_DIR
+
+ADDRESS=`heimdalld show-account --home $HEIMDALLDIR | jq ".address" | tr -d '"'`
+ADDRESS=`echo $ADDRESS | tr -d '[:cntrl:]'`
+echo "$ADDRESS" >> /tmp/vars.txt
+
+bor --datadir $DATA_DIR --port 30303 --http --http.addr 0.0.0.0 --http.vhosts '*' --http.corsdomain '*' --http.port 8545 --ipcpath $DATA_DIR/bor.ipc --http.api eth,net,web3,txpool,bor --networkid 137 --syncmode full --miner.gaslimit 200000000 --miner.gastarget 20000000 --txpool.nolocals --txpool.accountslots 128 --txpool.globalslots 20000 --txpool.life time 0h16m0s --keystore $DATA_DIR/keystore --unlock $ADDRESS --password $BOR_DIR/password.txt --allow-insecure-unlock --nodiscover --maxpeers 1 --metrics --pprof --pprof.port 7071 --pprof.addr 0.0.0.0 --mine
 
 exec /usr/sbin/sshd -D

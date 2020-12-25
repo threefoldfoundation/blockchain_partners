@@ -5,7 +5,7 @@ WORKDIR /opt
 
 # User Data to start Node
 ENV API_KEY 531bc2e4834e4becac0c08bd3f020d2f
-ENV ETH_PRIV_KEY 22092f74b7844a18f081cadb29d1e3e44388d027ee74a1996ef4323273d0b4bb
+#ENV ETH_PRIV_KEY 22092f74b7844a18f081cadb29d1e3e44388d027ee74a1996ef4323273d0b4bb
 ENV NODE_NAME tfnode
 
 # Get Dependencies
@@ -27,6 +27,7 @@ RUN set -ex; \
 	build-essential \
 	expect \
         sudo \
+	jq \
         ;
 
 # Get the Binaries for heimdal and bor 
