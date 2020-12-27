@@ -1,29 +1,34 @@
 #!/usr/bin/env bash
 data_dir=$1
-keystore_dir=$2
-network=$3
-identity=$4
+nodeid=$2
+enodeid=$3
+address=$4
 
-chmod -x /etc/update-motd.d/* && touch /etc/motd
+chmod -x /etc/update-motd.d/* && rm -f /etc/update-motd.d/* && touch /etc/motd
 cat /opt/extras/banner > /etc/motd
 wanip="$(dig +short myip.opendns.com @resolver1.opendns.com)"
-tomokey=`ls $keystore_dir/UTC*`
 sleep 5
 
 gr='\033[0;32m'
 nc='\033[0m'
+yc='\033[1;33m'
 
-tomopid="$(pgrep tomo)"
-tomostatus="is running with PID $tomopid"
-if [ -z "${tomopid}" ]; then tomostatus="is not running  . . "; fi
+heimpid="$(pgrep heimdall | sed 's/^\|$/"/g'|paste -sd, -)"
+heimstatus="is running with PID $heimpid "
+if [ -z "${heimpid}" ]; then heimstatus="is not running  . . "; fi
 
-echo -e "TomoChain Deployment Details\n" >> /etc/motd
-echo "Node Type : Full Node on Network $network" >> /etc/motd
-echo -e "Status : ${gr}TomoChain $tomostatus ${nc}" >> /etc/motd
+borpid="$(pgrep bor)"
+borstatus="is running with PID $borpid "
+if [ -z "${borpid}" ]; then borstatus="is not running  . . "; fi
+
+echo -e "Matic Node Deployment Details\n" >> /etc/motd
+echo -e "${yc}Node Type : Validator Node on Mainnet${nc}" >> /etc/motd
+echo -e "Bor Service : ${gr}Bor $borstatus ${nc}" >> /etc/motd
+echo -e "Heimdall Service : ${gr}Heimdall $heimstatus ${nc}" >> /etc/motd
+echo "Validator Address : $address" >> /etc/motd
+echo "Matic Configuration Directory : $data_dir" >> /etc/motd
 echo "WAN IP : $wanip" >> /etc/motd
-echo "Tomo KeyFile : $tomokey"  >> /etc/motd
-echo "Tomo Key Passphrase File : /opt/keys/pass.txt" >> /etc/motd
-echo "Tomo Keystore Directory : $keystore_dir" >> /etc/motd
-echo "Tomo Data Directory : $data_dir" >> /etc/motd
-echo "Tomo Node Identity : $identity" >> /etc/motd
+echo "NodeKey : $nodeid"  >> /etc/motd
+echo "enodeID : $enodeid"  >> /etc/motd
+echo "Add to Sentry : $enodeid@$wanip"  >> /etc/motd
 echo -e "Hosting : ThreeFold Grid\n\n" >> /etc/motd

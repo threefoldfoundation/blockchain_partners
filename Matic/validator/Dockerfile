@@ -5,8 +5,7 @@ WORKDIR /opt
 
 # User Data to start Node
 ENV API_KEY 531bc2e4834e4becac0c08bd3f020d2f
-#ENV ETH_PRIV_KEY 22092f74b7844a18f081cadb29d1e3e44388d027ee74a1996ef4323273d0b4bb
-ENV NODE_NAME tfnode
+ENV NODE_NAME tf-validator
 
 # Get Dependencies
 RUN set -ex; \
@@ -32,7 +31,6 @@ RUN set -ex; \
 
 # Get the Binaries for heimdal and bor 
 RUN wget --no-check-certificate https://matic-public.s3.amazonaws.com/v0.1.9/matic-heimdall_0.1.9_amd64.deb
-#RUN wget --no-check-certificate https://matic-public.s3.amazonaws.com/v0.1.8/matic-bor_0.1.8_amd64.deb
 RUN dpkg -i matic-*.deb
 RUN git clone https://github.com/maticnetwork/bor.git
 RUN cd bor && make bor-all
@@ -47,15 +45,11 @@ RUN mkdir -pv /matic-data
 RUN echo "root:tfnow2020" | chpasswd
 
 # Set Matic Configuration
-COPY config/eth /opt
 COPY scripts/start_matic.sh /
 COPY scripts/setmotd /opt
 COPY scripts/keystore.go /opt/heimdall
-#COPY images/banner /opt
+COPY scripts/banner /opt
 
 # Set Matic Startup Script
 ENTRYPOINT ["/start_matic.sh"]
 VOLUME /matic-data
-
-# Open P2P & RPC Port
-# EXPOSE 9998 9999
