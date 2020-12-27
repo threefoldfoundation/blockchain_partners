@@ -61,7 +61,9 @@ echo "VALIDATOR_ADDRESS = $ADDRESS" > /etc/matic/metadata
 MATIC_DATA=/matic-data
 nodeID=`heimdalld tendermint show-node-id`
 enodeID=`bootnode -nodekey $DATA_DIR/bor/nodekey -writeaddress`
+borkey=`ls $DATA_DIR/keystore/UTC*`
+ethrpc="https://mainnet.infura.io/v3/$API_KEY"
 cd /opt && mkdir -p /opt/extras && mv banner /opt/extras && mv setmotd /opt/extras
-/opt/extras/setmotd $MATIC_DATA $nodeID $enodeID $ADDRESS && mv * /opt/extras
+/opt/extras/setmotd $MATIC_DATA $nodeID $enodeID $ADDRESS $borkey $ethrpc && mv * /opt/extras
 
 exec /usr/sbin/sshd -D

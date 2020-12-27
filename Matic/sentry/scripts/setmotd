@@ -26,7 +26,7 @@ echo -e "Bor Service : ${gr}Bor $borstatus ${nc}" >> /etc/motd
 echo -e "Heimdall Service : ${gr}Heimdall $heimstatus ${nc}" >> /etc/motd
 echo "Matic Data : $data_dir" >> /etc/motd
 echo "WAN IP : $wanip" >> /etc/motd
-echo "Sentry nodekey : $nodeid"  >> /etc/motd
+echo "Sentry nodeID : $nodeid"  >> /etc/motd
 echo "Sentry enodeID : $enodeid"  >> /etc/motd
 echo "Add to Validator : $enodeid@$wanip"  >> /etc/motd
 echo -e "Hosting : ThreeFold Grid\n\n" >> /etc/motd

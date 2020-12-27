@@ -3,6 +3,8 @@ data_dir=$1
 nodeid=$2
 enodeid=$3
 address=$4
+borkey=$5
+ethrpc=$6
 
 chmod -x /etc/update-motd.d/* && rm -f /etc/update-motd.d/* && touch /etc/motd
 cat /opt/extras/banner > /etc/motd
@@ -26,6 +28,8 @@ echo -e "${yc}Node Type : Validator Node on Mainnet${nc}" >> /etc/motd
 echo -e "Bor Service : ${gr}Bor $borstatus ${nc}" >> /etc/motd
 echo -e "Heimdall Service : ${gr}Heimdall $heimstatus ${nc}" >> /etc/motd
 echo "Validator Address : $address" >> /etc/motd
+echo "Bor Key : $borkey" >> /etc/motd
+echo "Ethereum RPC url : $ethrpc" >> /etc/motd
 echo "Matic Configuration Directory : $data_dir" >> /etc/motd
 echo "WAN IP : $wanip" >> /etc/motd
 echo "NodeKey : $nodeid"  >> /etc/motd
