@@ -52,7 +52,7 @@ COPY scripts/keystore.go /opt/heimdall
 COPY scripts/banner /opt
 
 # Set Matic Startup Script
-#ENTRYPOINT ["/start_matic.sh"]
+ENTRYPOINT ["/start_matic.sh"]
 VOLUME /matic-data
 
 # Open P2P & RPC Port
