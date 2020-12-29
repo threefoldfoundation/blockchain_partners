@@ -15,11 +15,11 @@ echo "deb http://be.archive.ubuntu.com/ubuntu/ bionic main restricted universe m
 
 # Starting Node Services
 /etc/init.d/rabbitmq-server start
-export PATH=$PATH:/go/bin
 MATIC_DATA=/matic-data
 HEIMDALLDIR=/matic-data/heimdalld
 rm -f /heimdalld* && mkdir -p /matic-data/heimdalld && heimdalld init --home $HEIMDALLDIR
 echo "export HEIMDALLDIR=/matic-data/heimdalld" >> ~/.bashrc 
+echo "export PATH=$PATH:/go/bin" >> ~/.bashrc
 
 #Matic Configuration Heimdall
 CONFIGPATH=/opt/launch/mainnet-v1/sentry/sentry
@@ -28,7 +28,7 @@ source ~/.bashrc
 cp $CONFIGPATH/heimdall/config/genesis.json  $HEIMDALLDIR/config/genesis.json
 nodeID=`heimdalld tendermint show-node-id`
 
-if [ -z "${$NODE_NAME}" ]; then NODE_NAME="matic-tf-fullnode"; fi
+NODE_NAME="fullnode"
 sed -i "s/.*pex =.*/pex = true/" $HEIMDALLDIR/config/config.toml
 sed -i "s/.*prometheus =.*/prometheus = true/" $HEIMDALLDIR/config/config.toml
 sed -i "s/.*moniker =.*/moniker = '$NODE_NAME'/" $HEIMDALLDIR/config/config.toml
