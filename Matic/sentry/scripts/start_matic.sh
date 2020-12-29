@@ -15,6 +15,7 @@ echo "deb http://be.archive.ubuntu.com/ubuntu/ bionic main restricted universe m
 
 # Starting Node Services
 /etc/init.d/rabbitmq-server start
+export PATH=$PATH:/go/bin
 MATIC_DATA=/matic-data
 HEIMDALLDIR=/matic-data/heimdalld
 rm -f /heimdalld* && mkdir -p /matic-data/heimdalld && heimdalld init --home $HEIMDALLDIR
@@ -27,6 +28,7 @@ source ~/.bashrc
 cp $CONFIGPATH/heimdall/config/genesis.json  $HEIMDALLDIR/config/genesis.json
 nodeID=`heimdalld tendermint show-node-id`
 
+if [ -z "${$NODE_NAME}" ]; then NODE_NAME="matic-tf-fullnode"; fi
 sed -i "s/.*pex =.*/pex = true/" $HEIMDALLDIR/config/config.toml
 sed -i "s/.*prometheus =.*/prometheus = true/" $HEIMDALLDIR/config/config.toml
 sed -i "s/.*moniker =.*/moniker = '$NODE_NAME'/" $HEIMDALLDIR/config/config.toml
@@ -50,7 +52,7 @@ cd $DATA_DIR/bor/ && bootnode -genkey nodekey
 
 #Preparing Node Info
 nodeID=`heimdalld tendermint show-node-id`
-enodeID=`bootnode -nodekey $DATA_DIR/bor/nodekey -writeaddress`
+enodeID=`/go/bin/bootnode -nodekey $DATA_DIR/bor/nodekey -writeaddress`
 
 cd /opt && mkdir -p /opt/extras && mv banner /opt/extras && mv setmotd /opt/extras
 /opt/extras/setmotd $MATIC_DATA $nodeID $enodeID && mv * /opt/extras

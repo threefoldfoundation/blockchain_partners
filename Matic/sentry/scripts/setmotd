@@ -21,12 +21,12 @@ borstatus="is running with PID $borpid "
 if [ -z "${borpid}" ]; then borstatus="is not running  . . "; fi
 
 echo -e "Matic Node Deployment Details\n" >> /etc/motd
-echo -e "${yc}Node Type : Sentry Node on Mainnet${nc}" >> /etc/motd
+echo -e "${yc}Node Type : Full Node on Mainnet${nc}" >> /etc/motd
 echo -e "Bor Service : ${gr}Bor $borstatus ${nc}" >> /etc/motd
 echo -e "Heimdall Service : ${gr}Heimdall $heimstatus ${nc}" >> /etc/motd
 echo "Matic Data : $data_dir" >> /etc/motd
 echo "WAN IP : $wanip" >> /etc/motd
-echo "Sentry nodeID : $nodeid"  >> /etc/motd
-echo "Sentry enodeID : $enodeid"  >> /etc/motd
-echo "Add to Validator : $enodeid@$wanip"  >> /etc/motd
+echo "NodeID : $nodeid"  >> /etc/motd
+echo "EnodeID : $enodeid"  >> /etc/motd
+echo "For Validator : $enodeid@$wanip:30303"  >> /etc/motd
 echo -e "Hosting : ThreeFold Grid\n\n" >> /etc/motd
