@@ -18,6 +18,7 @@ echo "deb http://be.archive.ubuntu.com/ubuntu/ bionic main restricted universe m
 HEIMDALLDIR=/matic-data/heimdalld
 rm -f /heimdalld* && mkdir -p /matic-data/heimdalld && heimdalld init --home $HEIMDALLDIR
 echo "export HEIMDALLDIR=/matic-data/heimdalld" >> ~/.bashrc 
+echo "export PATH=$PATH:/go/bin" >> ~/.bashrc
 ETH_PRIV_KEY=`heimdalld show-privatekey --home $HEIMDALLDIR | jq .priv_key | tr -d '"'`
 ETH_PRIV_KEY=`echo $ETH_PRIV_KEY | tr -d '[:cntrl:]'`
 
@@ -60,7 +61,7 @@ echo "VALIDATOR_ADDRESS = $ADDRESS" > /etc/matic/metadata
 #Preparing Node Info
 MATIC_DATA=/matic-data
 nodeID=`heimdalld tendermint show-node-id`
-enodeID=`bootnode -nodekey $DATA_DIR/bor/nodekey -writeaddress`
+enodeID=`/go/bin/bootnode -nodekey $DATA_DIR/bor/nodekey -writeaddress`
 borkey=`ls $DATA_DIR/keystore/UTC*`
 ethrpc="https://mainnet.infura.io/v3/$API_KEY"
 cd /opt && mkdir -p /opt/extras && mv banner /opt/extras && mv setmotd /opt/extras
