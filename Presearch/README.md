@@ -14,5 +14,5 @@ docker build --tag myps_image:latest .
 
 You can then spin the container with your created image. Map the web port as you like,
 
-```docker run -dit --name=myps --hostname=myps -p 9999:80 myps_image:latest bash```
+```docker run -dit --name=myps --hostname=myps -p 9999:80 -v mystor:/app/node myps_image:latest bash```
  
