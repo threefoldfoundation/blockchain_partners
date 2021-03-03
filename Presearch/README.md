@@ -1,8 +1,6 @@
-# Presearch
+# Presearch Image
 
-# Dash
-
-To Deploy on Kubernetes, see this link  [Presearch Helm Chart for K8s](helm)
+This is image runs a Presearch node under the VDC
 
 ### How to build from the Dockerfile ?
 
